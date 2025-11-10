@@ -10,10 +10,18 @@ import { japaneseDramasData } from './data/japaneseDramas';
 import { musicData } from './data/music';
 import { moviesData } from './data/movies';
 import { booksData } from './data/books';
+import { westernSingersData } from './data/westernSingers';
+import { japaneseSingersData } from './data/japaneseSingers';
+import { chineseSingersData } from './data/chineseSingers';
+import { miyazakiWorksData } from './data/miyazakiWorks';
+import { shinkaiWorksData } from './data/shinkaiWorks';
+import { famousDirectorsData } from './data/famousDirectors';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 export default function Home() {
   const router = useRouter();
-  const { language, setLanguage, getWatchedCount, getTotalCount } = useApp();
+  const { language, getWatchedCount, getTotalCount } = useApp();
 
   const categories = [
     {
@@ -72,35 +80,64 @@ export default function Home() {
       years: '2010-2024',
       bgColor: 'bg-orange-50',
     },
+    {
+      id: 'western-singers',
+      name: { cn: '欧美歌手', en: 'Western Singers' },
+      data: westernSingersData,
+      years: '2010-2024',
+      bgColor: 'bg-rose-50',
+    },
+    {
+      id: 'japanese-singers',
+      name: { cn: '日本歌手', en: 'Japanese Singers' },
+      data: japaneseSingersData,
+      years: '2010-2024',
+      bgColor: 'bg-cyan-50',
+    },
+    {
+      id: 'chinese-singers',
+      name: { cn: '中国歌手', en: 'Chinese Singers' },
+      data: chineseSingersData,
+      years: '2010-2024',
+      bgColor: 'bg-lime-50',
+    },
+    {
+      id: 'miyazaki-works',
+      name: { cn: '宫崎骏作品', en: 'Hayao Miyazaki Works' },
+      data: miyazakiWorksData,
+      years: '1984-2023',
+      bgColor: 'bg-emerald-50',
+    },
+    {
+      id: 'shinkai-works',
+      name: { cn: '新海诚作品', en: 'Makoto Shinkai Works' },
+      data: shinkaiWorksData,
+      years: '2002-2022',
+      bgColor: 'bg-sky-50',
+    },
+    {
+      id: 'famous-directors',
+      name: { cn: '知名导演作品', en: 'Famous Directors' },
+      data: famousDirectorsData,
+      years: '2010-2024',
+      bgColor: 'bg-amber-50',
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      {/* Header */}
-      <header className="border-b border-gray-200 py-6 px-8">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-3xl font-bold">
-            {language === 'cn' ? '观影记录' : 'Media Tracker'}
-          </h1>
-          <button
-            onClick={() => setLanguage(language === 'cn' ? 'en' : 'cn')}
-            className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors duration-200"
-          >
-            {language === 'cn' ? 'English' : '中文'}
-          </button>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 text-gray-900 flex flex-col">
+      <Navbar />
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-12 px-8">
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">
+      <main className="flex-1 max-w-7xl mx-auto py-12 px-8 w-full">
+        <div className="mb-8 text-center">
+          <h2 className="text-4xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
             {language === 'cn' ? '选择分类' : 'Select Category'}
           </h2>
-          <p className="text-gray-600">
+          <p className="text-gray-700 text-lg">
             {language === 'cn'
-              ? '记录你看过的动漫、电影、电视剧、音乐和书籍'
-              : 'Track your watched anime, movies, TV shows, music, and books'}
+              ? '记录你看过的动漫、电影、电视剧、音乐、书籍和喜欢的歌手与导演作品'
+              : 'Track your watched anime, movies, TV shows, music, books, and favorite singers & directors'}
           </p>
         </div>
 
@@ -116,7 +153,7 @@ export default function Home() {
               <button
                 key={category.id}
                 onClick={() => router.push(`/category/${category.id}`)}
-                className={`${category.bgColor} hover:bg-gray-100 p-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-left border border-gray-200 hover:border-gray-300`}
+                className={`${category.bgColor} hover:shadow-xl p-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-left border-2 border-purple-200 hover:border-purple-400`}
               >
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold mb-2">
@@ -138,7 +175,7 @@ export default function Home() {
                   {/* Progress Bar */}
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300"
                       style={{ width: `${percentage}%` }}
                     />
                   </div>
@@ -153,14 +190,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-200 py-6 px-8 mt-12">
-        <div className="max-w-7xl mx-auto text-center text-gray-600 text-sm">
-          {language === 'cn'
-            ? '追踪你的观影历程，记录美好时光'
-            : 'Track your media journey, remember the good times'}
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

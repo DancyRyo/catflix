@@ -12,6 +12,8 @@ import { musicData } from '../../data/music';
 import { moviesData } from '../../data/movies';
 import { booksData } from '../../data/books';
 import { toPng } from 'html-to-image';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 export default function CategoryPage() {
   const params = useParams();
@@ -87,37 +89,33 @@ export default function CategoryPage() {
   const totalItems = years.reduce((acc, year) => acc + data[year].length, 0);
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      {/* Header */}
-      <header className="border-b border-gray-200 py-6 px-8 sticky top-0 bg-white z-10">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 text-gray-900 flex flex-col">
+      <Navbar />
+
+      {/* Sub Header */}
+      <div className="bg-white border-b border-purple-200 py-6 px-8 sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <button
-              onClick={() => router.push('/')}
-              className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors duration-200"
-            >
-              ← {language === 'cn' ? '返回' : 'Back'}
-            </button>
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               {currentCategory.name[language]}
             </h1>
           </div>
           <div className="flex items-center gap-4">
-            <div className="text-sm text-gray-600">
-              {language === 'cn' ? '已观看' : 'Watched'}: {totalWatched} / {totalItems}
+            <div className="text-sm text-gray-700 bg-purple-100 px-4 py-2 rounded-lg">
+              {language === 'cn' ? '已观看' : 'Watched'}: <span className="font-bold text-purple-700">{totalWatched} / {totalItems}</span>
             </div>
             <button
               onClick={handleGenerateSummary}
-              className="px-4 py-2 bg-blue-500 text-white hover:bg-blue-600 rounded-lg transition-colors duration-200 font-semibold"
+              className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 rounded-lg transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
             >
               {language === 'cn' ? '生成总结' : 'Generate Summary'}
             </button>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-12 px-8">
+      <main className="flex-1 max-w-7xl mx-auto py-12 px-8 w-full">
         {years.map((year) => {
           const items = data[year];
           const yearWatched = items.filter(
@@ -126,16 +124,16 @@ export default function CategoryPage() {
 
           return (
             <div key={year} className="mb-12">
-              <div className="mb-6">
+              <div className="mb-6 bg-white/50 backdrop-blur-sm p-4 rounded-lg border border-purple-200">
                 <div className="flex items-center justify-between mb-2">
-                  <h2 className="text-2xl font-bold">{year}</h2>
-                  <span className="text-gray-600">
+                  <h2 className="text-2xl font-bold text-purple-900">{year}</h2>
+                  <span className="text-gray-700 font-semibold bg-purple-100 px-3 py-1 rounded-full">
                     {yearWatched} / {items.length}
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-gray-200 rounded-full h-3">
                   <div
-                    className="bg-blue-500 h-2 rounded-full transition-all duration-300"
+                    className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-300 shadow-sm"
                     style={{
                       width: `${(yearWatched / items.length) * 100}%`,
                     }}
@@ -151,11 +149,11 @@ export default function CategoryPage() {
                     <button
                       key={item.id}
                       onClick={() => toggleWatched(categoryId, item.id)}
-                      className={`aspect-square p-4 rounded-lg border-2 transition-all duration-200 flex items-center justify-center text-center text-sm font-medium
+                      className={`aspect-square p-4 rounded-lg border-2 transition-all duration-200 flex items-center justify-center text-center text-sm font-medium shadow-sm hover:shadow-md
                         ${
                           isWatched
-                            ? 'bg-blue-500 text-white border-blue-500'
-                            : 'bg-gray-50 text-black border-gray-300 hover:border-gray-400'
+                            ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-500'
+                            : 'bg-white text-gray-900 border-purple-200 hover:border-purple-400 hover:bg-purple-50'
                         }`}
                       title={item[language]}
                     >
@@ -168,6 +166,8 @@ export default function CategoryPage() {
           );
         })}
       </main>
+
+      <Footer />
 
       {/* Summary Modal */}
       {showSummary && (
@@ -218,7 +218,7 @@ export default function CategoryPage() {
             <div className="mt-8 text-center">
               <button
                 onClick={() => setShowSummary(false)}
-                className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200"
+                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-md"
               >
                 {language === 'cn' ? '关闭' : 'Close'}
               </button>
