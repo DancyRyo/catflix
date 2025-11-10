@@ -11,6 +11,12 @@ import { japaneseDramasData } from '../../data/japaneseDramas';
 import { musicData } from '../../data/music';
 import { moviesData } from '../../data/movies';
 import { booksData } from '../../data/books';
+import { westernSingersData } from '../../data/westernSingers';
+import { japaneseSingersData } from '../../data/japaneseSingers';
+import { chineseSingersData } from '../../data/chineseSingers';
+import { miyazakiWorksData } from '../../data/miyazakiWorks';
+import { shinkaiWorksData } from '../../data/shinkaiWorks';
+import { famousDirectorsData } from '../../data/famousDirectors';
 import { toPng } from 'html-to-image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -33,6 +39,12 @@ export default function CategoryPage() {
     'music': { name: { cn: '音乐专辑', en: 'Music Albums' }, data: musicData },
     'movies': { name: { cn: '电影', en: 'Movies' }, data: moviesData },
     'books': { name: { cn: '外国新书', en: 'Foreign Books' }, data: booksData },
+    'western-singers': { name: { cn: '欧美歌手', en: 'Western Singers' }, data: westernSingersData },
+    'japanese-singers': { name: { cn: '日本歌手', en: 'Japanese Singers' }, data: japaneseSingersData },
+    'chinese-singers': { name: { cn: '中国歌手', en: 'Chinese Singers' }, data: chineseSingersData },
+    'miyazaki-works': { name: { cn: '宫崎骏作品', en: 'Miyazaki Works' }, data: miyazakiWorksData },
+    'shinkai-works': { name: { cn: '新海诚作品', en: 'Shinkai Works' }, data: shinkaiWorksData },
+    'famous-directors': { name: { cn: '知名导演作品', en: 'Famous Directors' }, data: famousDirectorsData },
   };
 
   const currentCategory = categoryData[categoryId];
@@ -89,14 +101,14 @@ export default function CategoryPage() {
   const totalItems = years.reduce((acc, year) => acc + data[year].length, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 text-gray-900 flex flex-col">
+    <div className="min-h-screen bg-purple-50 text-gray-900 flex flex-col">
       <Navbar />
 
       {/* Sub Header */}
       <div className="bg-white border-b border-purple-200 py-6 px-8 sticky top-0 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold text-purple-600">
               {currentCategory.name[language]}
             </h1>
           </div>
@@ -106,7 +118,7 @@ export default function CategoryPage() {
             </div>
             <button
               onClick={handleGenerateSummary}
-              className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 rounded-lg transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
+              className="px-4 py-2 bg-purple-600 text-white hover:bg-purple-700 rounded-lg transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
             >
               {language === 'cn' ? '生成总结' : 'Generate Summary'}
             </button>
@@ -133,7 +145,7 @@ export default function CategoryPage() {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3">
                   <div
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-300 shadow-sm"
+                    className="bg-purple-600 h-3 rounded-full transition-all duration-300 shadow-sm"
                     style={{
                       width: `${(yearWatched / items.length) * 100}%`,
                     }}
@@ -152,7 +164,7 @@ export default function CategoryPage() {
                       className={`aspect-square p-4 rounded-lg border-2 transition-all duration-200 flex items-center justify-center text-center text-sm font-medium shadow-sm hover:shadow-md
                         ${
                           isWatched
-                            ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-500'
+                            ? 'bg-purple-600 text-white border-purple-600'
                             : 'bg-white text-gray-900 border-purple-200 hover:border-purple-400 hover:bg-purple-50'
                         }`}
                       title={item[language]}
@@ -218,7 +230,7 @@ export default function CategoryPage() {
             <div className="mt-8 text-center">
               <button
                 onClick={() => setShowSummary(false)}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-md"
+                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all duration-200 shadow-md"
               >
                 {language === 'cn' ? '关闭' : 'Close'}
               </button>
