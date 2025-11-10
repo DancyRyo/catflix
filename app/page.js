@@ -18,6 +18,16 @@ import { shinkaiWorksData } from './data/shinkaiWorks';
 import { famousDirectorsData } from './data/famousDirectors';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import {
+  Film,
+  Tv,
+  Music,
+  BookOpen,
+  Palette,
+  User,
+  Clapperboard,
+  Sparkles
+} from 'lucide-react';
 
 export default function Home() {
   const router = useRouter();
@@ -29,109 +39,123 @@ export default function Home() {
       name: { cn: '日本动漫', en: 'Japanese Anime' },
       data: animeData,
       years: '2006-2024',
-      bgColor: 'bg-blue-50',
+      icon: Palette,
+      bgColor: 'bg-purple-50',
     },
     {
       id: 'chinese-anime',
       name: { cn: '中国动漫', en: 'Chinese Anime' },
       data: chineseAnimeData,
       years: '2010-2024',
-      bgColor: 'bg-purple-50',
+      icon: Palette,
+      bgColor: 'bg-purple-100',
     },
     {
       id: 'tv-shows',
       name: { cn: '外国电视剧', en: 'Foreign TV Shows' },
       data: tvShowsData,
       years: '2010-2024',
-      bgColor: 'bg-green-50',
+      icon: Tv,
+      bgColor: 'bg-purple-50',
     },
     {
       id: 'korean-dramas',
       name: { cn: '韩剧', en: 'Korean Dramas' },
       data: koreanDramasData,
       years: '2010-2024',
-      bgColor: 'bg-pink-50',
+      icon: Tv,
+      bgColor: 'bg-purple-100',
     },
     {
       id: 'japanese-dramas',
       name: { cn: '日剧', en: 'Japanese Dramas' },
       data: japaneseDramasData,
       years: '2010-2024',
-      bgColor: 'bg-indigo-50',
+      icon: Tv,
+      bgColor: 'bg-purple-50',
     },
     {
       id: 'music',
       name: { cn: '音乐专辑', en: 'Music Albums' },
       data: musicData,
       years: '2010-2024',
-      bgColor: 'bg-yellow-50',
+      icon: Music,
+      bgColor: 'bg-purple-100',
     },
     {
       id: 'movies',
       name: { cn: '电影', en: 'Movies' },
       data: moviesData,
       years: '2010-2024',
-      bgColor: 'bg-red-50',
+      icon: Film,
+      bgColor: 'bg-purple-50',
     },
     {
       id: 'books',
       name: { cn: '外国新书', en: 'Foreign Books' },
       data: booksData,
       years: '2010-2024',
-      bgColor: 'bg-orange-50',
+      icon: BookOpen,
+      bgColor: 'bg-purple-100',
     },
     {
       id: 'western-singers',
       name: { cn: '欧美歌手', en: 'Western Singers' },
       data: westernSingersData,
       years: '2010-2024',
-      bgColor: 'bg-rose-50',
+      icon: User,
+      bgColor: 'bg-purple-50',
     },
     {
       id: 'japanese-singers',
       name: { cn: '日本歌手', en: 'Japanese Singers' },
       data: japaneseSingersData,
       years: '2010-2024',
-      bgColor: 'bg-cyan-50',
+      icon: User,
+      bgColor: 'bg-purple-100',
     },
     {
       id: 'chinese-singers',
       name: { cn: '中国歌手', en: 'Chinese Singers' },
       data: chineseSingersData,
       years: '2010-2024',
-      bgColor: 'bg-lime-50',
+      icon: User,
+      bgColor: 'bg-purple-50',
     },
     {
       id: 'miyazaki-works',
       name: { cn: '宫崎骏作品', en: 'Hayao Miyazaki Works' },
       data: miyazakiWorksData,
       years: '1984-2023',
-      bgColor: 'bg-emerald-50',
+      icon: Sparkles,
+      bgColor: 'bg-purple-100',
     },
     {
       id: 'shinkai-works',
       name: { cn: '新海诚作品', en: 'Makoto Shinkai Works' },
       data: shinkaiWorksData,
       years: '2002-2022',
-      bgColor: 'bg-sky-50',
+      icon: Sparkles,
+      bgColor: 'bg-purple-50',
     },
     {
       id: 'famous-directors',
       name: { cn: '知名导演作品', en: 'Famous Directors' },
       data: famousDirectorsData,
       years: '2010-2024',
-      bgColor: 'bg-amber-50',
+      icon: Clapperboard,
+      bgColor: 'bg-purple-100',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 text-gray-900 flex flex-col">
+    <div className="min-h-screen bg-purple-50 text-gray-900 flex flex-col">
       <Navbar />
 
       {/* Main Content */}
       <main className="flex-1 max-w-7xl mx-auto py-12 px-8 w-full">
         <div className="mb-8 text-center">
-          <h2 className="text-4xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-3 text-purple-600">
             {language === 'cn' ? '选择分类' : 'Select Category'}
           </h2>
           <p className="text-gray-700 text-lg">
@@ -148,18 +172,22 @@ export default function Home() {
             const totalCount = getTotalCount(category.data);
             const percentage =
               totalCount > 0 ? Math.round((watchedCount / totalCount) * 100) : 0;
+            const IconComponent = category.icon;
 
             return (
               <button
                 key={category.id}
                 onClick={() => router.push(`/category/${category.id}`)}
-                className={`${category.bgColor} hover:shadow-xl p-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-left border-2 border-purple-200 hover:border-purple-400`}
+                className={`${category.bgColor} hover:shadow-xl p-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-left border-2 border-purple-200 hover:border-purple-500`}
               >
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold mb-2">
-                    {category.name[language]}
-                  </h3>
-                  <p className="text-sm text-gray-600">{category.years}</p>
+                <div className="mb-4 flex items-center gap-3">
+                  <IconComponent className="w-8 h-8 text-purple-600" />
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold">
+                      {category.name[language]}
+                    </h3>
+                    <p className="text-sm text-gray-600">{category.years}</p>
+                  </div>
                 </div>
 
                 <div className="space-y-2">
@@ -175,7 +203,7 @@ export default function Home() {
                   {/* Progress Bar */}
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300"
+                      className="bg-purple-600 h-2 rounded-full transition-all duration-300"
                       style={{ width: `${percentage}%` }}
                     />
                   </div>

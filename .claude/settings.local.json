@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm install html-to-image)",
       "Bash(mkdir -p app/data)",
-      "Bash(npm run dev)"
+      "Bash(npm run dev)",
+      "Bash(npm install lucide-react)"
     ],
     "deny": [],
     "ask": []
