@@ -114,10 +114,21 @@ export default function CategoryPage() {
   const handleSaveImage = async () => {
     if (mainContentRef.current) {
       try {
+        // 滚动到顶部以确保完整捕获
+        window.scrollTo(0, 0);
+
+        // 等待滚动完成
+        await new Promise(resolve => setTimeout(resolve, 100));
+
         const dataUrl = await toPng(mainContentRef.current, {
           quality: 0.95,
           pixelRatio: 2,
           cacheBust: true,
+          backgroundColor: '#ffffff',
+          // 确保捕获完整的内容包括 padding
+          style: {
+            margin: '0',
+          }
         });
 
         const link = document.createElement('a');
