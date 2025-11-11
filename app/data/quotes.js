@@ -483,6 +483,406 @@ export const quotesData = {
       source: { cn: '《真实的高贵》', en: 'True Nobility' },
       author: { cn: '海明威', en: 'Ernest Hemingway' },
       category: 'books'
+    },
+    {
+      id: 'book-21',
+      cn: '傲慢让人失败，偏见让人盲目。',
+      en: 'Pride makes us artificial and humility makes us real.',
+      source: { cn: '《傲慢与偏见》', en: 'Pride and Prejudice' },
+      author: { cn: '简·奥斯汀', en: 'Jane Austen' },
+      category: 'books'
+    },
+    {
+      id: 'book-22',
+      cn: '我宁愿怀着一颗高傲的心去爱，也不愿以卑微的姿态去乞求。',
+      en: 'I would rather have had one breath of her hair, one kiss from her mouth, than eternity without it.',
+      source: { cn: '《呼啸山庄》', en: 'Wuthering Heights' },
+      author: { cn: '艾米莉·勃朗特', en: 'Emily Brontë' },
+      category: 'books'
+    },
+    {
+      id: 'book-23',
+      cn: '对于世界，你可能只是一个人，但对于某个人，你却是整个世界。',
+      en: 'To the world you may be one person, but to one person you may be the world.',
+      source: { cn: '《简·爱》', en: 'Jane Eyre' },
+      author: { cn: '夏洛蒂·勃朗特', en: 'Charlotte Brontë' },
+      category: 'books'
+    },
+    {
+      id: 'book-24',
+      cn: '最深沉的爱，总是风雨兼程。',
+      en: 'Whatever our souls are made of, his and mine are the same.',
+      source: { cn: '《呼啸山庄》', en: 'Wuthering Heights' },
+      author: { cn: '艾米莉·勃朗特', en: 'Emily Brontë' },
+      category: 'books'
+    },
+    {
+      id: 'book-25',
+      cn: '幸福的家庭都是相似的，不幸的家庭各有各的不幸。',
+      en: 'All happy families are alike; each unhappy family is unhappy in its own way.',
+      source: { cn: '《安娜·卡列尼娜》', en: 'Anna Karenina' },
+      author: { cn: '列夫·托尔斯泰', en: 'Leo Tolstoy' },
+      category: 'books'
+    },
+    {
+      id: 'book-26',
+      cn: '如果你想要改变世界，就先改变自己。',
+      en: 'Everyone thinks of changing the world, but no one thinks of changing himself.',
+      source: { cn: '《战争与和平》', en: 'War and Peace' },
+      author: { cn: '列夫·托尔斯泰', en: 'Leo Tolstoy' },
+      category: 'books'
+    },
+    {
+      id: 'book-27',
+      cn: '痛苦的秘密在于有闲功夫为自己是否幸福而烦恼。',
+      en: 'The sole cause of suffering is the desire for a permanent state.',
+      source: { cn: '《战争与和平》', en: 'War and Peace' },
+      author: { cn: '列夫·托尔斯泰', en: 'Leo Tolstoy' },
+      category: 'books'
+    },
+    {
+      id: 'book-28',
+      cn: '人的一切痛苦，本质上都是对自己无能的愤怒。',
+      en: 'All the variety, all the charm, all the beauty of life is made up of light and shadow.',
+      source: { cn: '《安娜·卡列尼娜》', en: 'Anna Karenina' },
+      author: { cn: '列夫·托尔斯泰', en: 'Leo Tolstoy' },
+      category: 'books'
+    },
+    {
+      id: 'book-29',
+      cn: '重要的是行动，而不是结果。',
+      en: 'The strongest of all warriors are these two — Time and Patience.',
+      source: { cn: '《战争与和平》', en: 'War and Peace' },
+      author: { cn: '列夫·托尔斯泰', en: 'Leo Tolstoy' },
+      category: 'books'
+    },
+    {
+      id: 'book-30',
+      cn: '犯罪最痛苦的不是惩罚，而是良心的谴责。',
+      en: 'Pain and suffering are always inevitable for a large intelligence and a deep heart.',
+      source: { cn: '《罪与罚》', en: 'Crime and Punishment' },
+      author: { cn: '陀思妥耶夫斯基', en: 'Fyodor Dostoevsky' },
+      category: 'books'
+    },
+    {
+      id: 'book-31',
+      cn: '世界上最宽阔的是海洋，比海洋更宽阔的是天空，比天空更宽阔的是人的心灵。',
+      en: 'The supreme happiness of life is the conviction that we are loved.',
+      source: { cn: '《悲惨世界》', en: 'Les Misérables' },
+      author: { cn: '雨果', en: 'Victor Hugo' },
+      category: 'books'
+    },
+    {
+      id: 'book-32',
+      cn: '释放无限光明的是人心，制造无边黑暗的也是人心。',
+      en: 'Even the darkest night will end and the sun will rise.',
+      source: { cn: '《悲惨世界》', en: 'Les Misérables' },
+      author: { cn: '雨果', en: 'Victor Hugo' },
+      category: 'books'
+    },
+    {
+      id: 'book-33',
+      cn: '爱情是生命的火花，友谊的升华，心灵的吻合。',
+      en: 'To love another person is to see the face of God.',
+      source: { cn: '《悲惨世界》', en: 'Les Misérables' },
+      author: { cn: '雨果', en: 'Victor Hugo' },
+      category: 'books'
+    },
+    {
+      id: 'book-34',
+      cn: '人类的一切智慧包含在这两个词中：等待和希望。',
+      en: 'All human wisdom is summed up in two words - wait and hope.',
+      source: { cn: '《基督山伯爵》', en: 'The Count of Monte Cristo' },
+      author: { cn: '大仲马', en: 'Alexandre Dumas' },
+      category: 'books'
+    },
+    {
+      id: 'book-35',
+      cn: '对于有信仰的人，死是永生之门。',
+      en: 'Until the day when God will deign to reveal the future to man, all human wisdom is contained in these two words: Wait and Hope.',
+      source: { cn: '《基督山伯爵》', en: 'The Count of Monte Cristo' },
+      author: { cn: '大仲马', en: 'Alexandre Dumas' },
+      category: 'books'
+    },
+    {
+      id: 'book-36',
+      cn: '生活不可能像你想象的那么好，但也不会像你想象的那么糟。',
+      en: 'Life is a storm, my young friend. You will bask in the sunlight one moment, be shattered on the rocks the next.',
+      source: { cn: '《羊脂球》', en: 'Boule de Suif' },
+      author: { cn: '莫泊桑', en: 'Guy de Maupassant' },
+      category: 'books'
+    },
+    {
+      id: 'book-37',
+      cn: '当我们面对痛苦时，我们才能真正理解生活。',
+      en: 'There are only two or three human stories, and they go on repeating themselves as fiercely as if they had never happened before.',
+      source: { cn: '《项链》', en: 'The Necklace' },
+      author: { cn: '莫泊桑', en: 'Guy de Maupassant' },
+      category: 'books'
+    },
+    {
+      id: 'book-38',
+      cn: '在你的黄金时代，你应该像太阳一样灿烂。',
+      en: 'It is better to be feared than loved, if you cannot be both.',
+      source: { cn: '《君主论》', en: 'The Prince' },
+      author: { cn: '马基雅维利', en: 'Niccolò Machiavelli' },
+      category: 'books'
+    },
+    {
+      id: 'book-39',
+      cn: '历史是由胜利者书写的。',
+      en: 'History is written by the victors.',
+      source: { cn: '《战争论》', en: 'On War' },
+      author: { cn: '克劳塞维茨', en: 'Carl von Clausewitz' },
+      category: 'books'
+    },
+    {
+      id: 'book-40',
+      cn: '满纸荒唐言，一把辛酸泪。都云作者痴，谁解其中味？',
+      en: 'Pages full of fantastic talk, a handful of bitter tears. All say the author is mad, but who can understand the meaning?',
+      source: { cn: '《红楼梦》', en: 'Dream of the Red Chamber' },
+      author: { cn: '曹雪芹', en: 'Cao Xueqin' },
+      category: 'books'
+    },
+    {
+      id: 'book-41',
+      cn: '世事洞明皆学问，人情练达即文章。',
+      en: 'Understanding the ways of the world is learning; mastering human relationships is literature.',
+      source: { cn: '《红楼梦》', en: 'Dream of the Red Chamber' },
+      author: { cn: '曹雪芹', en: 'Cao Xueqin' },
+      category: 'books'
+    },
+    {
+      id: 'book-42',
+      cn: '假作真时真亦假，无为有处有还无。',
+      en: 'Truth becomes fiction when the fiction is true; Real becomes not-real when the unreal is real.',
+      source: { cn: '《红楼梦》', en: 'Dream of the Red Chamber' },
+      author: { cn: '曹雪芹', en: 'Cao Xueqin' },
+      category: 'books'
+    },
+    {
+      id: 'book-43',
+      cn: '人生得意须尽欢，莫使金樽空对月。',
+      en: 'Seize the day and enjoy yourself to the fullest, do not let the golden cup sit empty under the moon.',
+      source: { cn: '《将进酒》', en: 'Invitation to Wine' },
+      author: { cn: '李白', en: 'Li Bai' },
+      category: 'books'
+    },
+    {
+      id: 'book-44',
+      cn: '天生我材必有用，千金散尽还复来。',
+      en: 'Heaven has made us talents, we are not made in vain. A thousand gold coins spent will come back again.',
+      source: { cn: '《将进酒》', en: 'Invitation to Wine' },
+      author: { cn: '李白', en: 'Li Bai' },
+      category: 'books'
+    },
+    {
+      id: 'book-45',
+      cn: '路漫漫其修远兮，吾将上下而求索。',
+      en: 'The way ahead is long and has no ending; yet high and low I will search with my will unbending.',
+      source: { cn: '《离骚》', en: 'Li Sao' },
+      author: { cn: '屈原', en: 'Qu Yuan' },
+      category: 'books'
+    },
+    {
+      id: 'book-46',
+      cn: '宝剑锋从磨砺出，梅花香自苦寒来。',
+      en: 'The sharp edge of a sword comes from grinding; the fragrance of plum blossoms comes from the bitter cold.',
+      source: { cn: '《警世贤文》', en: 'Wise Words to the World' },
+      author: { cn: '佚名', en: 'Anonymous' },
+      category: 'books'
+    },
+    {
+      id: 'book-47',
+      cn: '长风破浪会有时，直挂云帆济沧海。',
+      en: 'There will be a time when I ride the wind and cleave the waves, raise my sail and cross the vast sea.',
+      source: { cn: '《行路难》', en: 'Hard is the Journey' },
+      author: { cn: '李白', en: 'Li Bai' },
+      category: 'books'
+    },
+    {
+      id: 'book-48',
+      cn: '人无远虑，必有近忧。',
+      en: 'Without foresight, one will have immediate worries.',
+      source: { cn: '《论语》', en: 'The Analects' },
+      author: { cn: '孔子', en: 'Confucius' },
+      category: 'books'
+    },
+    {
+      id: 'book-49',
+      cn: '己所不欲，勿施于人。',
+      en: 'Do not do to others what you do not want done to yourself.',
+      source: { cn: '《论语》', en: 'The Analects' },
+      author: { cn: '孔子', en: 'Confucius' },
+      category: 'books'
+    },
+    {
+      id: 'book-50',
+      cn: '学而不思则罔，思而不学则殆。',
+      en: 'Learning without thought is labor lost; thought without learning is perilous.',
+      source: { cn: '《论语》', en: 'The Analects' },
+      author: { cn: '孔子', en: 'Confucius' },
+      category: 'books'
+    },
+    {
+      id: 'book-51',
+      cn: '三军可夺帅也，匹夫不可夺志也。',
+      en: 'An army can be deprived of its commander, but a common man cannot be deprived of his will.',
+      source: { cn: '《论语》', en: 'The Analects' },
+      author: { cn: '孔子', en: 'Confucius' },
+      category: 'books'
+    },
+    {
+      id: 'book-52',
+      cn: '知之者不如好之者，好之者不如乐之者。',
+      en: 'Those who know are not as good as those who love; those who love are not as good as those who delight in it.',
+      source: { cn: '《论语》', en: 'The Analects' },
+      author: { cn: '孔子', en: 'Confucius' },
+      category: 'books'
+    },
+    {
+      id: 'book-53',
+      cn: '取经路上，八十一难，方能成佛。',
+      en: 'On the journey to obtain scriptures, one must overcome eighty-one tribulations to achieve enlightenment.',
+      source: { cn: '《西游记》', en: 'Journey to the West' },
+      author: { cn: '吴承恩', en: 'Wu Cheng\'en' },
+      category: 'books'
+    },
+    {
+      id: 'book-54',
+      cn: '心生，种种魔生；心灭，种种魔灭。',
+      en: 'When the mind is born, all demons arise; when the mind is extinguished, all demons vanish.',
+      source: { cn: '《西游记》', en: 'Journey to the West' },
+      author: { cn: '吴承恩', en: 'Wu Cheng\'en' },
+      category: 'books'
+    },
+    {
+      id: 'book-55',
+      cn: '人生如梦，一尊还酹江月。',
+      en: 'Life is like a dream; I pour a cup of wine to the river and the moon.',
+      source: { cn: '《念奴娇·赤壁怀古》', en: 'Remembering the Past at Red Cliff' },
+      author: { cn: '苏轼', en: 'Su Shi' },
+      category: 'books'
+    },
+    {
+      id: 'book-56',
+      cn: '他人笑我太疯癫，我笑他人看不穿。',
+      en: 'Others laugh at me for being too crazy; I laugh at them for not seeing through.',
+      source: { cn: '《唐伯虎点秋香》', en: 'Flirting Scholar' },
+      author: { cn: '唐伯虎', en: 'Tang Bohu' },
+      category: 'books'
+    },
+    {
+      id: 'book-57',
+      cn: '有志者事竟成，破釜沉舟，百二秦关终属楚。',
+      en: 'Where there is a will, there is a way. Break the pots and sink the boats, and the hundred and two passes of Qin will belong to Chu.',
+      source: { cn: '《史记》', en: 'Records of the Grand Historian' },
+      author: { cn: '司马迁', en: 'Sima Qian' },
+      category: 'books'
+    },
+    {
+      id: 'book-58',
+      cn: '海纳百川，有容乃大；壁立千仞，无欲则刚。',
+      en: 'The sea accepts all rivers, for tolerance is greatness; a thousand-foot wall stands strong, for without desire comes strength.',
+      source: { cn: '《林则徐集》', en: 'Collected Works of Lin Zexu' },
+      author: { cn: '林则徐', en: 'Lin Zexu' },
+      category: 'books'
+    },
+    {
+      id: 'book-59',
+      cn: '白鲸是我的宿命。',
+      en: 'The White Whale is my destiny.',
+      source: { cn: '《白鲸》', en: 'Moby-Dick' },
+      author: { cn: '赫尔曼·梅尔维尔', en: 'Herman Melville' },
+      category: 'books'
+    },
+    {
+      id: 'book-60',
+      cn: '人类注定要重复历史的错误。',
+      en: 'Those who cannot remember the past are condemned to repeat it.',
+      source: { cn: '《理性生活》', en: 'The Life of Reason' },
+      author: { cn: '乔治·桑塔亚那', en: 'George Santayana' },
+      category: 'books'
+    },
+    {
+      id: 'book-61',
+      cn: '一个人并不是生来要被打败的，你尽可以把他消灭掉，可就是打不败他。',
+      en: 'But man is not made for defeat. A man can be destroyed but not defeated.',
+      source: { cn: '《老人与海》', en: 'The Old Man and the Sea' },
+      author: { cn: '海明威', en: 'Ernest Hemingway' },
+      category: 'books'
+    },
+    {
+      id: 'book-62',
+      cn: '优于别人，并不高贵，真正的高贵应该是优于过去的自己。',
+      en: 'There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self.',
+      source: { cn: '《真实的高贵》', en: 'True Nobility' },
+      author: { cn: '海明威', en: 'Ernest Hemingway' },
+      category: 'books'
+    },
+    {
+      id: 'book-63',
+      cn: '这个世界如此美好，值得人们为它奋斗。',
+      en: 'The world is a fine place and worth fighting for.',
+      source: { cn: '《丧钟为谁而鸣》', en: 'For Whom the Bell Tolls' },
+      author: { cn: '海明威', en: 'Ernest Hemingway' },
+      category: 'books'
+    },
+    {
+      id: 'book-64',
+      cn: '所有好的书都有一个共同点，它们都比真实生活更真实。',
+      en: 'All good books have one thing in common - they are truer than if they had really happened.',
+      source: { cn: '《午后之死》', en: 'Death in the Afternoon' },
+      author: { cn: '海明威', en: 'Ernest Hemingway' },
+      category: 'books'
+    },
+    {
+      id: 'book-65',
+      cn: '美德犹如名香，经燃烧或压榨而其香愈烈。',
+      en: 'Virtue is like precious odors, most fragrant when they are crushed.',
+      source: { cn: '《论厄运》', en: 'Of Adversity' },
+      author: { cn: '培根', en: 'Francis Bacon' },
+      category: 'books'
+    },
+    {
+      id: 'book-66',
+      cn: '知识就是力量。',
+      en: 'Knowledge itself is power.',
+      source: { cn: '《沉思录》', en: 'Meditationes Sacrae' },
+      author: { cn: '培根', en: 'Francis Bacon' },
+      category: 'books'
+    },
+    {
+      id: 'book-67',
+      cn: '一个人的性格决定他的命运。',
+      en: 'Character is destiny.',
+      source: { cn: '《米德尔马契》', en: 'Middlemarch' },
+      author: { cn: '乔治·艾略特', en: 'George Eliot' },
+      category: 'books'
+    },
+    {
+      id: 'book-68',
+      cn: '凡事皆有可能，不可能只是懒惰的借口。',
+      en: 'Nothing is impossible, the word itself says I\'m possible!',
+      source: { cn: '《爱丽丝梦游仙境》', en: 'Alice in Wonderland' },
+      author: { cn: '刘易斯·卡罗尔', en: 'Lewis Carroll' },
+      category: 'books'
+    },
+    {
+      id: 'book-69',
+      cn: '从前的日色变得慢，车，马，邮件都慢，一生只够爱一个人。',
+      en: 'In the old days, time moved slowly; carriages, horses, and mail were all slow; one lifetime was only enough to love one person.',
+      source: { cn: '《从前慢》', en: 'Once Upon a Time' },
+      author: { cn: '木心', en: 'Mu Xin' },
+      category: 'books'
+    },
+    {
+      id: 'book-70',
+      cn: '黑夜给了我黑色的眼睛，我却用它寻找光明。',
+      en: 'The dark night gave me dark eyes, but I use them to seek the light.',
+      source: { cn: '《一代人》', en: 'A Generation' },
+      author: { cn: '顾城', en: 'Gu Cheng' },
+      category: 'books'
     }
   ],
   music: [
