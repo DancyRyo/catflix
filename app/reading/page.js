@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useApp } from '../context/AppContext';
 import { quotesData } from '../data/quotes';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Search, User, BookOpen, Tag, Eye, Grid3x3, ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { Search, User, BookOpen, Tag, Eye, Grid3x3, ArrowLeft, ArrowRight, X, Plus } from 'lucide-react';
 
 export default function ReadingPage() {
   const router = useRouter();
@@ -15,6 +15,70 @@ export default function ReadingPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [readingMode, setReadingMode] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [userQuotes, setUserQuotes] = useState([]);
+  const [newQuote, setNewQuote] = useState({
+    cn: '',
+    en: '',
+    sourceCn: '',
+    sourceEn: '',
+    authorCn: '',
+    authorEn: '',
+    category: 'books'
+  });
+
+  // 从 localStorage 加载用户引用
+  useEffect(() => {
+    const saved = localStorage.getItem('userQuotes');
+    if (saved) {
+      try {
+        setUserQuotes(JSON.parse(saved));
+      } catch (e) {
+        console.error('Failed to load user quotes:', e);
+      }
+    }
+  }, []);
+
+  // 保存用户引用到 localStorage
+  const saveUserQuote = (quote) => {
+    const newUserQuote = {
+      id: `user-${Date.now()}`,
+      cn: quote.cn,
+      en: quote.en,
+      source: { cn: quote.sourceCn, en: quote.sourceEn },
+      author: { cn: quote.authorCn, en: quote.authorEn },
+      category: 'mine'
+    };
+
+    const updated = [...userQuotes, newUserQuote];
+    setUserQuotes(updated);
+    localStorage.setItem('userQuotes', JSON.stringify(updated));
+
+    // 重置表单
+    setNewQuote({
+      cn: '',
+      en: '',
+      sourceCn: '',
+      sourceEn: '',
+      authorCn: '',
+      authorEn: '',
+      category: 'books'
+    });
+    setShowAddModal(false);
+
+    // 显示通知
+    const notification = document.createElement('div');
+    notification.className = 'fixed bottom-8 right-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-2xl shadow-2xl z-50 animate-fade-in font-semibold border border-white/30';
+    notification.textContent = language === 'cn' ? '✓ 引用添加成功' : '✓ Quote added successfully';
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+      notification.style.opacity = '0';
+      notification.style.transform = 'translateY(10px)';
+      notification.style.transition = 'all 0.3s ease-out';
+      setTimeout(() => notification.remove(), 300);
+    }, 2000);
+  };
 
   // 合并所有引用
   const allQuotes = useMemo(() => {
@@ -22,9 +86,10 @@ export default function ReadingPage() {
       ...quotesData.anime,
       ...quotesData.movies,
       ...quotesData.books,
-      ...quotesData.music
+      ...quotesData.music,
+      ...userQuotes
     ];
-  }, []);
+  }, [userQuotes]);
 
   // 过滤和搜索
   const filteredQuotes = useMemo(() => {
@@ -55,6 +120,7 @@ export default function ReadingPage() {
 
   const categories = [
     { id: 'all', name: { cn: '全部', en: 'All' } },
+    { id: 'mine', name: { cn: '我的', en: 'Mine' } },
     { id: 'anime', name: { cn: '动漫', en: 'Anime' } },
     { id: 'movies', name: { cn: '电影', en: 'Movies' } },
     { id: 'books', name: { cn: '书籍', en: 'Books' } },
@@ -152,6 +218,7 @@ export default function ReadingPage() {
                       {currentQuote.category === 'movies' && (language === 'cn' ? '电影' : 'Movies')}
                       {currentQuote.category === 'books' && (language === 'cn' ? '书籍' : 'Books')}
                       {currentQuote.category === 'music' && (language === 'cn' ? '音乐' : 'Music')}
+                      {currentQuote.category === 'mine' && (language === 'cn' ? '我的' : 'Mine')}
                     </span>
                   </span>
                 </div>
@@ -217,14 +284,24 @@ export default function ReadingPage() {
               </p>
             </div>
 
-            <button
-              onClick={() => setReadingMode(true)}
-              disabled={filteredQuotes.length === 0}
-              className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <Eye size={18} />
-              {language === 'cn' ? '阅读模式' : 'Reading Mode'}
-            </button>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowAddModal(true)}
+                className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all flex items-center gap-2 shadow-md hover:shadow-lg"
+              >
+                <Plus size={18} />
+                {language === 'cn' ? '添加引用' : 'Add Quote'}
+              </button>
+
+              <button
+                onClick={() => setReadingMode(true)}
+                disabled={filteredQuotes.length === 0}
+                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <Eye size={18} />
+                {language === 'cn' ? '阅读模式' : 'Reading Mode'}
+              </button>
+            </div>
           </div>
 
           {/* Search Bar */}
@@ -315,6 +392,7 @@ export default function ReadingPage() {
                     {quote.category === 'movies' && (language === 'cn' ? '电影' : 'Movies')}
                     {quote.category === 'books' && (language === 'cn' ? '书籍' : 'Books')}
                     {quote.category === 'music' && (language === 'cn' ? '音乐' : 'Music')}
+                    {quote.category === 'mine' && (language === 'cn' ? '我的' : 'Mine')}
                   </span>
                 </div>
               </div>
@@ -334,6 +412,142 @@ export default function ReadingPage() {
       </main>
 
       <Footer />
+
+      {/* Add Quote Modal */}
+      {showAddModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-t-2xl">
+              <div className="flex justify-between items-center">
+                <h2 className="text-2xl font-bold flex items-center gap-2">
+                  <Plus size={24} />
+                  {language === 'cn' ? '添加新引用' : 'Add New Quote'}
+                </h2>
+                <button
+                  onClick={() => setShowAddModal(false)}
+                  className="hover:bg-white/20 p-2 rounded-lg transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+            </div>
+
+            <div className="p-6 space-y-4">
+              {/* 中文句子 */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  {language === 'cn' ? '中文句子 *' : 'Chinese Quote *'}
+                </label>
+                <textarea
+                  value={newQuote.cn}
+                  onChange={(e) => setNewQuote({ ...newQuote, cn: e.target.value })}
+                  placeholder={language === 'cn' ? '输入中文句子...' : 'Enter Chinese quote...'}
+                  className="w-full px-4 py-3 border-2 border-purple-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-900 resize-none"
+                  rows="3"
+                  required
+                />
+              </div>
+
+              {/* 英文句子 */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  {language === 'cn' ? '英文句子 *' : 'English Quote *'}
+                </label>
+                <textarea
+                  value={newQuote.en}
+                  onChange={(e) => setNewQuote({ ...newQuote, en: e.target.value })}
+                  placeholder={language === 'cn' ? '输入英文句子...' : 'Enter English quote...'}
+                  className="w-full px-4 py-3 border-2 border-purple-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-900 resize-none"
+                  rows="3"
+                  required
+                />
+              </div>
+
+              {/* 作品名称 */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    {language === 'cn' ? '中文作品名 *' : 'Chinese Source *'}
+                  </label>
+                  <input
+                    type="text"
+                    value={newQuote.sourceCn}
+                    onChange={(e) => setNewQuote({ ...newQuote, sourceCn: e.target.value })}
+                    placeholder={language === 'cn' ? '例如：红楼梦' : 'e.g.: 红楼梦'}
+                    className="w-full px-4 py-3 border-2 border-purple-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-900"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    {language === 'cn' ? '英文作品名 *' : 'English Source *'}
+                  </label>
+                  <input
+                    type="text"
+                    value={newQuote.sourceEn}
+                    onChange={(e) => setNewQuote({ ...newQuote, sourceEn: e.target.value })}
+                    placeholder={language === 'cn' ? 'e.g.: Dream of the Red Chamber' : 'e.g.: Dream of the Red Chamber'}
+                    className="w-full px-4 py-3 border-2 border-purple-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-900"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* 作者 */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    {language === 'cn' ? '中文作者 *' : 'Chinese Author *'}
+                  </label>
+                  <input
+                    type="text"
+                    value={newQuote.authorCn}
+                    onChange={(e) => setNewQuote({ ...newQuote, authorCn: e.target.value })}
+                    placeholder={language === 'cn' ? '例如：曹雪芹' : 'e.g.: 曹雪芹'}
+                    className="w-full px-4 py-3 border-2 border-purple-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-900"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    {language === 'cn' ? '英文作者 *' : 'English Author *'}
+                  </label>
+                  <input
+                    type="text"
+                    value={newQuote.authorEn}
+                    onChange={(e) => setNewQuote({ ...newQuote, authorEn: e.target.value })}
+                    placeholder={language === 'cn' ? 'e.g.: Cao Xueqin' : 'e.g.: Cao Xueqin'}
+                    className="w-full px-4 py-3 border-2 border-purple-200 rounded-lg focus:outline-none focus:border-purple-500 text-gray-900"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* 按钮 */}
+              <div className="flex gap-3 pt-4">
+                <button
+                  onClick={() => setShowAddModal(false)}
+                  className="flex-1 px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all font-semibold"
+                >
+                  {language === 'cn' ? '取消' : 'Cancel'}
+                </button>
+                <button
+                  onClick={() => {
+                    if (newQuote.cn && newQuote.en && newQuote.sourceCn && newQuote.sourceEn && newQuote.authorCn && newQuote.authorEn) {
+                      saveUserQuote(newQuote);
+                    } else {
+                      alert(language === 'cn' ? '请填写所有必填字段' : 'Please fill in all required fields');
+                    }
+                  }}
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all font-semibold shadow-lg hover:shadow-xl"
+                >
+                  {language === 'cn' ? '保存' : 'Save'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
