@@ -1,6 +1,7 @@
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
+import Head from 'next/head';
 import { useState, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import { animeData } from '../../data/anime';

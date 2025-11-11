@@ -3,20 +3,68 @@
 import { useApp } from '../context/AppContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { OrganizationSchema, FAQSchema } from '../components/SEO';
 
 export default function AboutPage() {
   const { language } = useApp();
 
+  const faqs = language === 'cn' ? [
+    {
+      question: "观影记录是什么？",
+      answer: "观影记录是一个专业的媒体追踪工具，帮助您记录和管理观看过的电影、动漫、电视剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单等功能。"
+    },
+    {
+      question: "支持哪些类型的内容？",
+      answer: "我们支持多种类型的内容追踪，包括日本动漫、中国动漫、电影、外国电视剧、韩剧、日剧、音乐专辑、书籍、游戏等。还包括宫崎骏作品、新海诚作品等特色分类。"
+    },
+    {
+      question: "是否支持多语言？",
+      answer: "是的，我们完整支持中文和英文双语界面，您可以随时在两种语言之间切换。"
+    },
+    {
+      question: "数据会保存在哪里？",
+      answer: "您的数据会安全地保存在浏览器的本地存储中，保证您的隐私安全。"
+    }
+  ] : [
+    {
+      question: "What is Media Tracker?",
+      answer: "Media Tracker is a professional media tracking tool that helps you record and manage movies, anime, TV shows, books, and games you've watched. It supports progress tracking, ratings, notes, and featured lists."
+    },
+    {
+      question: "What types of content are supported?",
+      answer: "We support multiple types of content tracking, including Japanese anime, Chinese anime, movies, foreign TV shows, Korean dramas, Japanese dramas, music albums, books, games, etc. Special categories like Miyazaki and Shinkai works are also included."
+    },
+    {
+      question: "Is multi-language supported?",
+      answer: "Yes, we fully support both Chinese and English interfaces, and you can switch between the two languages at any time."
+    },
+    {
+      question: "Where is my data stored?",
+      answer: "Your data is securely stored in your browser's local storage, ensuring your privacy and security."
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen text-gray-900 flex flex-col relative">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50"></div>
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
       <Navbar />
 
-      <main className="flex-1 max-w-4xl mx-auto px-8 py-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
+      <OrganizationSchema />
+      <FAQSchema faqs={faqs} />
+
+      <main className="flex-1 max-w-4xl mx-auto px-8 py-16">
+        <h1 className="text-5xl font-bold gradient-text mb-12 text-center">
           {language === 'cn' ? '关于我们' : 'About Us'}
         </h1>
 
-        <div className="prose prose-lg max-w-none">
+        <div className="space-y-8">
           {language === 'cn' ? (
             <>
               <section className="mb-8">

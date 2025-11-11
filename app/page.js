@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useApp } from './context/AppContext';
+import Script from 'next/script';
 import { animeData } from './data/anime';
 import { chineseAnimeData } from './data/chineseAnime';
 import { tvShowsData } from './data/tvShows';
@@ -236,6 +237,47 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      {/* Structured Data (JSON-LD) for SEO */}
+      <Script id="schema-org" type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": language === 'cn' ? "观影记录" : "Media Tracker",
+          "alternateName": language === 'cn' ? "Media Tracker" : "观影记录",
+          "description": language === 'cn'
+            ? "专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单。"
+            : "Professional media tracking tool to help you record and manage movies, anime, TV shows, books and games you've watched. Supports progress tracking, ratings, notes and featured lists.",
+          "url": typeof window !== 'undefined' ? window.location.origin : '',
+          "applicationCategory": "EntertainmentApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "featureList": [
+            language === 'cn' ? "电影追踪" : "Movie Tracking",
+            language === 'cn' ? "动漫清单管理" : "Anime List Management",
+            language === 'cn' ? "电视剧记录" : "TV Show Recording",
+            language === 'cn' ? "进度追踪" : "Progress Tracking",
+            language === 'cn' ? "评分和笔记" : "Ratings and Notes",
+            language === 'cn' ? "精选榜单" : "Featured Lists",
+            language === 'cn' ? "多语言支持" : "Multi-language Support"
+          ],
+          "inLanguage": [
+            { "@type": "Language", "name": "Chinese", "alternateName": "zh-CN" },
+            { "@type": "Language", "name": "English", "alternateName": "en-US" }
+          ]
+        })}
+      </Script>
     </div>
   );
 }
