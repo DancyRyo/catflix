@@ -39,28 +39,6 @@ export default function ReadingPage() {
     }
   }, []);
 
-  // 键盘事件监听器 - 用于阅读模式
-  useEffect(() => {
-    if (!readingMode) return;
-
-    const handleKeyDown = (e) => {
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        handlePrev();
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        handleNext();
-      } else if (e.key === 'Escape') {
-        e.preventDefault();
-        setReadingMode(false);
-        setCurrentIndex(0);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [readingMode, currentIndex, filteredQuotes.length]);
-
   // 保存用户引用到 localStorage
   const saveUserQuote = (quote) => {
     const newUserQuote = {
@@ -160,6 +138,28 @@ export default function ReadingPage() {
       setCurrentIndex(currentIndex - 1);
     }
   };
+
+  // 键盘事件监听器 - 用于阅读模式
+  useEffect(() => {
+    if (!readingMode) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrev();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleNext();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        setReadingMode(false);
+        setCurrentIndex(0);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [readingMode, currentIndex, filteredQuotes.length]);
 
   // Reading Mode View
   if (readingMode && filteredQuotes.length > 0) {
