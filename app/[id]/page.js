@@ -219,44 +219,47 @@ export default function CategoryPage() {
           ).length;
 
           return (
-            <div key={year} className="mb-16">
-              <div className="mb-8 bg-white/80 backdrop-blur-lg p-6 rounded-2xl border border-white/60 shadow-lg">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{year}</h2>
-                  <span className="text-gray-700 font-bold bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full shadow-md border border-white/60">
-                    {yearWatched} / {items.length}
-                  </span>
+            <div key={year} className="mb-6 bg-white/80 backdrop-blur-lg p-4 rounded-2xl border border-white/60 shadow-lg">
+              <div className="flex items-start gap-6">
+                {/* Left: Year and Progress */}
+                <div className="flex-shrink-0 w-32">
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3">{year}</h2>
+                  <div className="text-center">
+                    <span className="text-sm text-gray-700 font-bold bg-gradient-to-r from-purple-100 to-pink-100 px-3 py-1.5 rounded-full shadow-md border border-white/60 inline-block">
+                      {yearWatched} / {items.length}
+                    </span>
+                  </div>
+                  <div className="mt-3 relative w-full bg-gray-200 rounded-full h-2 overflow-hidden shadow-inner">
+                    <div
+                      className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 rounded-full transition-all duration-500 shadow-md"
+                      style={{
+                        width: `${(yearWatched / items.length) * 100}%`,
+                      }}
+                    />
+                  </div>
                 </div>
-                <div className="relative w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 rounded-full transition-all duration-500 shadow-md"
-                    style={{
-                      width: `${(yearWatched / items.length) * 100}%`,
-                    }}
-                  />
-                </div>
-              </div>
 
-              {/* Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
-                {items.map((item) => {
-                  const isWatched = watched[categoryId]?.[item.id];
-                  return (
-                    <button
-                      key={item.id}
-                      onClick={() => toggleWatched(categoryId, item.id)}
-                      className={`aspect-square p-4 rounded-2xl transition-all duration-300 flex items-center justify-center text-center text-sm font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 border-2
-                        ${
-                          isWatched
-                            ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-400/50'
-                            : 'bg-white/80 backdrop-blur-sm text-gray-800 border-white/60 hover:border-purple-400/50 hover:bg-white/90'
-                        }`}
-                      title={item[language]}
-                    >
-                      <span className="line-clamp-3">{item[language]}</span>
-                    </button>
-                  );
-                })}
+                {/* Right: Grid of Items */}
+                <div className="flex-1 grid grid-cols-12 gap-2">
+                  {items.map((item) => {
+                    const isWatched = watched[categoryId]?.[item.id];
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => toggleWatched(categoryId, item.id)}
+                        className={`aspect-square p-1.5 rounded-lg transition-all duration-300 flex items-center justify-center text-center text-xs font-semibold shadow-md hover:shadow-xl transform hover:scale-110 border
+                          ${
+                            isWatched
+                              ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-400/50'
+                              : 'bg-white/80 backdrop-blur-sm text-gray-800 border-white/60 hover:border-purple-400/50 hover:bg-white/90'
+                          }`}
+                        title={item[language]}
+                      >
+                        <span className="line-clamp-2 leading-tight">{item[language]}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           );
