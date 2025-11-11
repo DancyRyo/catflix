@@ -82,13 +82,39 @@ export default function CategoryPage() {
     setTimeout(async () => {
       if (summaryRef.current) {
         try {
-          const dataUrl = await toPng(summaryRef.current, { quality: 0.95 });
+          // 保存原始样式
+          const originalStyle = {
+            maxHeight: summaryRef.current.style.maxHeight,
+            overflow: summaryRef.current.style.overflow,
+          };
+
+          // 临时移除高度限制以捕获完整内容
+          summaryRef.current.style.maxHeight = 'none';
+          summaryRef.current.style.overflow = 'visible';
+
+          // 生成图片
+          const dataUrl = await toPng(summaryRef.current, {
+            quality: 0.95,
+            pixelRatio: 2, // 提高清晰度
+            cacheBust: true,
+          });
+
+          // 恢复原始样式
+          summaryRef.current.style.maxHeight = originalStyle.maxHeight;
+          summaryRef.current.style.overflow = originalStyle.overflow;
+
+          // 下载图片
           const link = document.createElement('a');
           link.download = `${categoryId}-summary.png`;
           link.href = dataUrl;
           link.click();
         } catch (err) {
           console.error('Failed to generate image:', err);
+          // 确保即使出错也恢复样式
+          if (summaryRef.current) {
+            summaryRef.current.style.maxHeight = '';
+            summaryRef.current.style.overflow = '';
+          }
         }
       }
     }, 100);
