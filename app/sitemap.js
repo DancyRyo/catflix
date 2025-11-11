@@ -72,7 +72,7 @@ export default function sitemap() {
   ];
 
   const categoryPages = categories.map((category) => ({
-    url: `${baseUrl}/category/${category}`,
+    url: `${baseUrl}/${category}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,

@@ -186,7 +186,7 @@ export default function Home() {
             return (
               <button
                 key={category.id}
-                onClick={() => router.push(`/category/${category.id}`)}
+                onClick={() => router.push(`/${category.id}`)}
                 className="group relative bg-white/80 backdrop-blur-lg hover:shadow-2xl p-8 rounded-2xl transition-all duration-500 transform hover:scale-105 text-left border border-white/60 hover:border-purple-400/50 overflow-hidden card-hover-lift"
               >
                 {/* Gradient overlay on hover */}
