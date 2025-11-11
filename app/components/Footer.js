@@ -86,7 +86,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            © 2024 <span className="font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{language === 'cn' ? '观影记录' : 'Media Tracker'}</span>. {language === 'cn' ? '保留所有权利。' : 'All rights reserved.'}
+            © 2024 <span className="font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">{language === 'cn' ? '黑猫影记' : 'CatFlix'}</span>. {language === 'cn' ? '保留所有权利。' : 'All rights reserved.'}
           </p>
         </div>
       </div>

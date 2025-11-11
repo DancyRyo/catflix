@@ -14,21 +14,21 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "观影记录 - 追踪你的电影、动漫、电视剧、书籍和游戏 | Media Tracker",
-    template: "%s | 观影记录 Media Tracker"
+    default: "黑猫影记 - 追踪你的电影、动漫、电视剧、书籍和游戏 | CatFlix Media Tracker",
+    template: "%s | 黑猫影记 CatFlix"
   },
-  description: "专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单。Track your movies, anime, TV shows, books and games with our professional media tracker.",
+  description: "黑猫影记 CatFlix - 专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单。Track your movies, anime, TV shows, books and games with CatFlix.",
   keywords: [
-    "观影记录", "电影追踪", "动漫清单", "追番", "电视剧记录", "书籍阅读清单",
-    "media tracker", "movie tracker", "anime list", "tv show tracker", "reading list",
+    "黑猫影记", "CatFlix", "观影记录", "电影追踪", "动漫清单", "追番", "电视剧记录", "书籍阅读清单",
+    "media tracker", "movie tracker", "anime list", "tv show tracker", "reading list", "catflix",
     "日本动漫", "宫崎骏", "新海诚", "豆瓣电影", "IMDb",
     "Japanese anime", "Miyazaki", "Shinkai", "Korean drama", "Japanese drama",
     "观看进度", "影视清单", "追剧神器", "观影统计", "媒体管理",
     "watchlist", "movie organizer", "anime tracker", "show progress"
   ],
-  authors: [{ name: "Media Tracker Team" }],
-  creator: "Media Tracker",
-  publisher: "Media Tracker",
+  authors: [{ name: "CatFlix Team" }],
+  creator: "CatFlix",
+  publisher: "黑猫影记 CatFlix",
   formatDetection: {
     email: false,
     address: false,
@@ -47,24 +47,24 @@ export const metadata = {
     locale: 'zh_CN',
     alternateLocale: ['en_US'],
     url: '/',
-    siteName: '观影记录 Media Tracker',
-    title: '观影记录 - 追踪你的电影、动漫、电视剧、书籍和游戏',
-    description: '专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单。',
+    siteName: '黑猫影记 CatFlix',
+    title: '黑猫影记 CatFlix - 追踪你的电影、动漫、电视剧、书籍和游戏',
+    description: '黑猫影记 CatFlix - 专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单。',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: '观影记录 Media Tracker',
+        alt: '黑猫影记 CatFlix Media Tracker',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '观影记录 - 追踪你的电影、动漫、电视剧、书籍和游戏',
-    description: '专业的媒体追踪工具，帮助你记录和管理观看过的电影、动漫、电视剧、书籍和游戏。',
+    title: '黑猫影记 CatFlix - 追踪你的电影、动漫、电视剧、书籍和游戏',
+    description: '黑猫影记 CatFlix - 专业的媒体追踪工具，帮助你记录和管理观看过的电影、动漫、电视剧、书籍和游戏。',
     images: ['/twitter-image.jpg'],
-    creator: '@mediatracker',
+    creator: '@catflix',
   },
   robots: {
     index: true,
@@ -97,7 +97,7 @@ export default function RootLayout({ children }) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Media Tracker" />
+        <meta name="apple-mobile-web-app-title" content="黑猫影记 CatFlix" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

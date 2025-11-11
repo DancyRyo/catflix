@@ -10,8 +10,8 @@ export default function AboutPage() {
 
   const faqs = language === 'cn' ? [
     {
-      question: "观影记录是什么？",
-      answer: "观影记录是一个专业的媒体追踪工具，帮助您记录和管理观看过的电影、动漫、电视剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单等功能。"
+      question: "黑猫影记是什么？",
+      answer: "黑猫影记（CatFlix）是一个专业的媒体追踪工具，帮助您记录和管理观看过的电影、动漫、电视剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单等功能。"
     },
     {
       question: "支持哪些类型的内容？",
@@ -27,8 +27,8 @@ export default function AboutPage() {
     }
   ] : [
     {
-      question: "What is Media Tracker?",
-      answer: "Media Tracker is a professional media tracking tool that helps you record and manage movies, anime, TV shows, books, and games you've watched. It supports progress tracking, ratings, notes, and featured lists."
+      question: "What is CatFlix?",
+      answer: "CatFlix (黑猫影记) is a professional media tracking tool that helps you record and manage movies, anime, TV shows, books, and games you've watched. It supports progress tracking, ratings, notes, and featured lists."
     },
     {
       question: "What types of content are supported?",

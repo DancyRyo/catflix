@@ -68,15 +68,15 @@ export function OrganizationSchema() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "观影记录 Media Tracker",
-    "alternateName": ["Media Tracker", "观影记录"],
+    "name": "黑猫影记 CatFlix",
+    "alternateName": ["CatFlix", "黑猫影记", "Cat Media Tracker"],
     "url": typeof window !== 'undefined' ? window.location.origin : '',
     "logo": typeof window !== 'undefined' ? `${window.location.origin}/logo.png` : '',
-    "description": "专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。",
+    "description": "黑猫影记 CatFlix - 专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。",
     "sameAs": [
       // Add your social media links here
-      // "https://twitter.com/mediatracker",
-      // "https://facebook.com/mediatracker",
+      // "https://twitter.com/catflix",
+      // "https://facebook.com/catflix",
     ]
   };
 

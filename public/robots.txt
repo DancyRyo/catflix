@@ -1,4 +1,4 @@
-# robots.txt for Media Tracker (观影记录)
+# robots.txt for CatFlix 黑猫影记
 
 # Allow all search engines
 User-agent: *

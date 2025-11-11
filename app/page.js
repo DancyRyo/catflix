@@ -243,11 +243,11 @@ export default function Home() {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebApplication",
-          "name": language === 'cn' ? "观影记录" : "Media Tracker",
-          "alternateName": language === 'cn' ? "Media Tracker" : "观影记录",
+          "name": language === 'cn' ? "黑猫影记" : "CatFlix",
+          "alternateName": language === 'cn' ? "CatFlix" : "黑猫影记",
           "description": language === 'cn'
-            ? "专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单。"
-            : "Professional media tracking tool to help you record and manage movies, anime, TV shows, books and games you've watched. Supports progress tracking, ratings, notes and featured lists.",
+            ? "黑猫影记 CatFlix - 专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏。支持进度追踪、评分、笔记和精选榜单。"
+            : "CatFlix - Professional media tracking tool to help you record and manage movies, anime, TV shows, books and games you've watched. Supports progress tracking, ratings, notes and featured lists.",
           "url": typeof window !== 'undefined' ? window.location.origin : '',
           "applicationCategory": "EntertainmentApplication",
           "operatingSystem": "All",

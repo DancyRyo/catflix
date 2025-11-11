@@ -1,7 +1,7 @@
 {
-  "name": "观影记录 - Media Tracker",
-  "short_name": "MediaTracker",
-  "description": "专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏",
+  "name": "黑猫影记 - CatFlix Media Tracker",
+  "short_name": "CatFlix",
+  "description": "黑猫影记 CatFlix - 专业的媒体追踪工具，帮助你记录和管理观看过的电影、日本动漫、电视剧、韩剧、日剧、书籍和游戏",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8f9ff",

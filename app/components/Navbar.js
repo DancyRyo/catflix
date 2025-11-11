@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useApp } from '../context/AppContext';
-import { Home, FileText, Star, BookOpen, Languages } from 'lucide-react';
+import { Home, FileText, Star, BookOpen, Languages, Cat } from 'lucide-react';
 
 export default function Navbar() {
   const router = useRouter();
@@ -12,12 +12,17 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/20 shadow-lg">
       <div className="max-w-7xl mx-auto px-8 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo with gradient */}
+          {/* Logo with Cat icon */}
           <button
             onClick={() => router.push('/')}
-            className="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 text-2xl font-bold hover:opacity-80 transition-all duration-300 group"
           >
-            {language === 'cn' ? '观影记录' : 'Media Tracker'}
+            <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg group-hover:shadow-xl transition-all group-hover:scale-110">
+              <Cat className="w-6 h-6 text-white" />
+            </div>
+            <span className="gradient-text">
+              {language === 'cn' ? '黑猫影记' : 'CatFlix'}
+            </span>
           </button>
 
           {/* Navigation Links */}
