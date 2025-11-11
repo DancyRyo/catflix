@@ -159,6 +159,206 @@ export const quotesData = {
       source: { cn: '《新世纪福音战士》', en: 'Evangelion' },
       author: { cn: '碇真嗣', en: 'Shinji Ikari' },
       category: 'anime'
+    },
+    {
+      id: 'anime-21',
+      cn: '我绝不食言，这就是我的忍道！',
+      en: 'I never go back on my word, that is my ninja way!',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '漩涡鸣人', en: 'Naruto Uzumaki' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-22',
+      cn: '只要有树叶飞舞的地方，火就会燃烧。',
+      en: 'Where leaves dance, the fire will burn.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '猿飞日斩', en: 'Hiruzen Sarutobi' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-23',
+      cn: '放弃同伴的人，连垃圾都不如。',
+      en: 'Those who break the rules are scum, but those who abandon their friends are worse than scum.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '旗木卡卡西', en: 'Kakashi Hatake' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-24',
+      cn: '因为失去，所以明白。',
+      en: 'Because of loss, we understand.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '长门', en: 'Nagato' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-25',
+      cn: '人是因为有难忘的回忆才会坚强。',
+      en: 'People become strong because they have precious memories they cannot forget.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '波风水门', en: 'Minato Namikaze' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-26',
+      cn: '人在保护最重要的东西时，会变得非常坚强。',
+      en: 'When people are protecting something truly special to them, they truly can become as strong as they can be.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '白', en: 'Haku' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-27',
+      cn: '能原谅别人的不是力量，而是温柔。',
+      en: "It's not power that allows you to forgive, but kindness.",
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '自来也', en: 'Jiraiya' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-28',
+      cn: '只要活着，无论多痛苦的事情也一定会有好事发生。',
+      en: 'As long as you live, no matter how painful things get, good things will surely happen.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波鼬', en: 'Itachi Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-29',
+      cn: '你的笑容，一定能拯救他人。',
+      en: 'Your smile will surely save someone.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '漩涡玖辛奈', en: 'Kushina Uzumaki' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-30',
+      cn: '没有什么是偶然的，一切都是必然。',
+      en: 'There is no such thing as coincidence in this world, there is only inevitability.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-31',
+      cn: '世界上没有偶然，有的只是必然。',
+      en: 'In this world, there is no such thing as chance. There is only the inevitable.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '次元魔女', en: 'Dimension Witch' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-32',
+      cn: '只要还没有结束，就还有希望。',
+      en: 'As long as it is not over, there is still hope.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本樱', en: 'Sakura Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-33',
+      cn: '最重要的东西，总是看不见的。',
+      en: 'The most important things are always invisible.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '月城雪兔', en: 'Yukito Tsukishiro' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-34',
+      cn: '无论在哪里，我都会找到你。',
+      en: 'No matter where you are, I will find you.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '小狼', en: 'Syaoran' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-35',
+      cn: '守护重要之人，就是我存在的意义。',
+      en: 'Protecting those who are important to me is the meaning of my existence.',
+      source: { cn: '《X战记》', en: 'X' },
+      author: { cn: '司狼神威', en: 'Kamui Shiro' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-36',
+      cn: '价格就是等价交换，等价于那个东西的代价。',
+      en: 'The price is equivalent exchange, the value equal to what is being exchanged.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-37',
+      cn: '战斗是为了胜利，但这不是唯一的道路。',
+      en: 'We fight to win, but that is not the only path.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-38',
+      cn: '如果不战斗，就无法获胜；如果不获胜，就会死亡；如果不死亡，就无法战斗。',
+      en: 'If you don\'t fight, you can\'t win. If you don\'t win, you will die. If you die, you can\'t fight.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-39',
+      cn: '世界很残酷，但也很美丽。',
+      en: 'The world is cruel, but also beautiful.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '三笠·阿克曼', en: 'Mikasa Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-40',
+      cn: '人类最大的武器就是习惯与信赖。',
+      en: 'Humanity\'s greatest weapons are habit and trust.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '利威尔', en: 'Levi Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-41',
+      cn: '即使是弱者，只要聚集起来就能得到獠牙。',
+      en: 'Even the weak can gain fangs if they gather together.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-42',
+      cn: '没有什么能够永恒，就连我们这些人类也是。',
+      en: 'Nothing can last forever, not even us humans.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '埃尔文·史密斯', en: 'Erwin Smith' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-43',
+      cn: '只有那些愿意被抛弃的人，才能改变一切。',
+      en: 'Only those who are willing to be abandoned can change everything.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '埃尔文·史密斯', en: 'Erwin Smith' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-44',
+      cn: '要想打破现状，必须有所牺牲。',
+      en: 'To break the status quo, sacrifices must be made.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-45',
+      cn: '能够放弃的人，才能获得超越的力量。',
+      en: 'Those who can abandon can gain power beyond.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '利威尔', en: 'Levi Ackerman' },
+      category: 'anime'
     }
   ],
   movies: [

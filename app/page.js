@@ -17,6 +17,10 @@ import { chineseSingersData } from './data/chineseSingers';
 import { miyazakiWorksData } from './data/miyazakiWorks';
 import { shinkaiWorksData } from './data/shinkaiWorks';
 import { famousDirectorsData } from './data/famousDirectors';
+import { steamGamesData } from './data/steamGames';
+import { iosGamesData } from './data/iosGames';
+import { switchGamesData } from './data/switchGames';
+import { koreanMoviesData } from './data/koreanMovies';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import {
@@ -27,7 +31,8 @@ import {
   Palette,
   User,
   Clapperboard,
-  Sparkles
+  Sparkles,
+  Gamepad2
 } from 'lucide-react';
 
 export default function Home() {
@@ -147,6 +152,38 @@ export default function Home() {
       icon: Clapperboard,
       bgColor: 'bg-purple-100',
     },
+    {
+      id: 'steam-games',
+      name: { cn: 'Steam 游戏', en: 'Steam Games' },
+      data: steamGamesData,
+      years: '2011-2024',
+      icon: Gamepad2,
+      bgColor: 'bg-purple-50',
+    },
+    {
+      id: 'ios-games',
+      name: { cn: 'iOS 游戏', en: 'iOS Games' },
+      data: iosGamesData,
+      years: '2008-2024',
+      icon: Gamepad2,
+      bgColor: 'bg-purple-100',
+    },
+    {
+      id: 'switch-games',
+      name: { cn: 'Switch 游戏', en: 'Switch Games' },
+      data: switchGamesData,
+      years: '2017-2024',
+      icon: Gamepad2,
+      bgColor: 'bg-purple-50',
+    },
+    {
+      id: 'korean-movies',
+      name: { cn: '韩国电影', en: 'Korean Movies' },
+      data: koreanMoviesData,
+      years: '2003-2024',
+      icon: Film,
+      bgColor: 'bg-purple-100',
+    },
   ];
 
   return (
@@ -169,8 +206,8 @@ export default function Home() {
           </h2>
           <p className="text-gray-600 text-xl max-w-3xl mx-auto">
             {language === 'cn'
-              ? '记录你看过的动漫、电影、电视剧、音乐、书籍和喜欢的歌手与导演作品'
-              : 'Track your watched anime, movies, TV shows, music, books, and favorite singers & directors'}
+              ? '记录你看过的动漫、电影、电视剧、音乐、书籍、游戏和喜欢的歌手与导演作品'
+              : 'Track your watched anime, movies, TV shows, music, books, games, and favorite singers & directors'}
           </p>
         </div>
 

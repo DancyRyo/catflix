@@ -18,6 +18,10 @@ import { chineseSingersData } from '../data/chineseSingers';
 import { miyazakiWorksData } from '../data/miyazakiWorks';
 import { shinkaiWorksData } from '../data/shinkaiWorks';
 import { famousDirectorsData } from '../data/famousDirectors';
+import { steamGamesData } from '../data/steamGames';
+import { iosGamesData } from '../data/iosGames';
+import { switchGamesData } from '../data/switchGames';
+import { koreanMoviesData } from '../data/koreanMovies';
 import { toPng } from 'html-to-image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -48,6 +52,10 @@ export default function CategoryPage() {
     'miyazaki-works': { name: { cn: '宫崎骏作品', en: 'Miyazaki Works' }, data: miyazakiWorksData },
     'shinkai-works': { name: { cn: '新海诚作品', en: 'Shinkai Works' }, data: shinkaiWorksData },
     'famous-directors': { name: { cn: '知名导演作品', en: 'Famous Directors' }, data: famousDirectorsData },
+    'steam-games': { name: { cn: 'Steam 游戏', en: 'Steam Games' }, data: steamGamesData },
+    'ios-games': { name: { cn: 'iOS 游戏', en: 'iOS Games' }, data: iosGamesData },
+    'switch-games': { name: { cn: 'Switch 游戏', en: 'Switch Games' }, data: switchGamesData },
+    'korean-movies': { name: { cn: '韩国电影', en: 'Korean Movies' }, data: koreanMoviesData },
   };
 
   const currentCategory = categoryData[categoryId];
