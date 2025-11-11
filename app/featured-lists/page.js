@@ -155,7 +155,7 @@ export default function FeaturedListsPage() {
                     className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all border-2 border-purple-100 hover:border-purple-300"
                   >
                     {item.image && (
-                      <div className="h-48 overflow-hidden bg-gray-200">
+                      <div className="h-76 overflow-hidden bg-gray-200">
                         <img
                           src={item.image}
                           alt={item.title}
@@ -178,11 +178,10 @@ export default function FeaturedListsPage() {
                       <button
                         onClick={() => handleAddToWishlist(item, selectedList.type)}
                         disabled={addedItems.has(item.title)}
-                        className={`w-full py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1 ${
-                          addedItems.has(item.title)
-                            ? 'bg-green-100 text-green-800 cursor-not-allowed'
-                            : 'bg-purple-600 text-white hover:bg-purple-700'
-                        }`}
+                        className={`w-full py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1 ${addedItems.has(item.title)
+                          ? 'bg-green-100 text-green-800 cursor-not-allowed'
+                          : 'bg-purple-600 text-white hover:bg-purple-700'
+                          }`}
                       >
                         {addedItems.has(item.title) ? (
                           <>

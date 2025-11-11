@@ -46,34 +46,42 @@ export default function RecordsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-purple-50 text-gray-900 flex flex-col">
+    <div className="min-h-screen text-gray-900 flex flex-col relative">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50"></div>
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
       <Navbar />
 
-      <main className="flex-1 max-w-7xl mx-auto py-12 px-8 w-full">
+      <main className="flex-1 max-w-7xl mx-auto py-16 px-8 w-full">
         {/* Header */}
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-4">
-            <h1 className="text-4xl font-bold text-purple-600">
+        <div className="mb-12">
+          <div className="flex justify-between items-center mb-6">
+            <h1 className="text-5xl font-bold gradient-text">
               {language === 'cn' ? '我的记录' : 'My Records'}
             </h1>
             <div className="flex gap-3">
               <button
                 onClick={() => router.push('/records/reading-mode')}
-                className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 flex items-center gap-2 font-medium shadow-lg hover:shadow-xl hover:scale-105"
               >
                 <BookOpen size={18} />
                 {language === 'cn' ? '阅读模式' : 'Reading Mode'}
               </button>
               <button
                 onClick={() => router.push('/featured-lists')}
-                className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 flex items-center gap-2 font-medium shadow-lg hover:shadow-xl hover:scale-105"
               >
                 <Star size={18} />
                 {language === 'cn' ? '精选榜单' : 'Featured Lists'}
               </button>
               <button
                 onClick={() => setShowForm(true)}
-                className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all flex items-center gap-2"
+                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center gap-2 font-medium shadow-lg hover:shadow-xl hover:scale-105"
               >
                 <Plus size={18} />
                 {language === 'cn' ? '添加记录' : 'Add Record'}
@@ -83,18 +91,17 @@ export default function RecordsPage() {
         </div>
 
         {/* Tabs */}
-        <div className="mb-6 flex gap-2 border-b border-gray-200">
+        <div className="mb-8 flex gap-3 bg-white/80 backdrop-blur-lg p-2 rounded-2xl border border-white/60 shadow-lg w-fit">
           {tabs.map((tab) => {
             const IconComponent = tab.icon;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-3 font-semibold transition-all flex items-center gap-2 ${
-                  activeTab === tab.id
-                    ? 'border-b-2 border-purple-600 text-purple-600'
-                    : 'text-gray-600 hover:text-purple-600'
-                }`}
+                className={`px-6 py-3 font-semibold transition-all duration-300 flex items-center gap-2 rounded-xl ${activeTab === tab.id
+                  ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg scale-105'
+                  : 'text-gray-700 hover:bg-gray-100'
+                  }`}
               >
                 <IconComponent size={20} />
                 {language === 'cn' ? tab.cn : tab.en}
@@ -104,35 +111,32 @@ export default function RecordsPage() {
         </div>
 
         {/* Status Filter */}
-        <div className="mb-6 flex gap-3">
+        <div className="mb-8 flex gap-4">
           <button
             onClick={() => setStatusFilter('all')}
-            className={`px-4 py-2 rounded-lg transition-all ${
-              statusFilter === 'all'
-                ? 'bg-purple-600 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
+            className={`px-6 py-3 rounded-xl transition-all duration-300 font-medium shadow-md hover:shadow-lg hover:scale-105 ${statusFilter === 'all'
+              ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
+              : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white border border-white/60'
+              }`}
           >
             {language === 'cn' ? '全部' : 'All'} ({tabRecords.length})
           </button>
           <button
             onClick={() => setStatusFilter('watched')}
-            className={`px-4 py-2 rounded-lg transition-all ${
-              statusFilter === 'watched'
-                ? 'bg-green-600 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
+            className={`px-6 py-3 rounded-xl transition-all duration-300 font-medium shadow-md hover:shadow-lg hover:scale-105 ${statusFilter === 'watched'
+              ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+              : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white border border-white/60'
+              }`}
           >
             {language === 'cn' ? '已看' : 'Watched'} (
             {tabRecords.filter((r) => r.status === 'watched').length})
           </button>
           <button
             onClick={() => setStatusFilter('wishlist')}
-            className={`px-4 py-2 rounded-lg transition-all ${
-              statusFilter === 'wishlist'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-            }`}
+            className={`px-6 py-3 rounded-xl transition-all duration-300 font-medium shadow-md hover:shadow-lg hover:scale-105 ${statusFilter === 'wishlist'
+              ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
+              : 'bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white border border-white/60'
+              }`}
           >
             {language === 'cn' ? '想看' : 'Wishlist'} (
             {tabRecords.filter((r) => r.status === 'wishlist').length})
@@ -157,9 +161,9 @@ export default function RecordsPage() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredRecords.map((record) => (
-              <RecordCard key={record.id} record={record} onEdit={handleEdit} />
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {filteredRecords.map((record, index) => (
+              <RecordCard key={index} record={record} onEdit={handleEdit} />
             ))}
           </div>
         )}

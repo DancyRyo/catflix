@@ -149,16 +149,24 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-purple-50 text-gray-900 flex flex-col">
+    <div className="min-h-screen text-gray-900 flex flex-col relative">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50"></div>
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
       <Navbar />
 
       {/* Main Content */}
-      <main className="flex-1 max-w-7xl mx-auto py-12 px-8 w-full">
-        <div className="mb-8 text-center">
-          <h2 className="text-4xl font-bold mb-3 text-purple-600">
+      <main className="flex-1 max-w-7xl mx-auto py-16 px-8 w-full">
+        <div className="mb-12 text-center">
+          <h2 className="text-5xl font-bold mb-4 gradient-text">
             {language === 'cn' ? '选择分类' : 'Select Category'}
           </h2>
-          <p className="text-gray-700 text-lg">
+          <p className="text-gray-600 text-xl max-w-3xl mx-auto">
             {language === 'cn'
               ? '记录你看过的动漫、电影、电视剧、音乐、书籍和喜欢的歌手与导演作品'
               : 'Track your watched anime, movies, TV shows, music, books, and favorite singers & directors'}
@@ -166,7 +174,7 @@ export default function Home() {
         </div>
 
         {/* Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category) => {
             const watchedCount = getWatchedCount(category.id);
             const totalCount = getTotalCount(category.data);
@@ -178,38 +186,47 @@ export default function Home() {
               <button
                 key={category.id}
                 onClick={() => router.push(`/category/${category.id}`)}
-                className={`${category.bgColor} hover:shadow-xl p-8 rounded-xl transition-all duration-300 transform hover:scale-105 text-left border-2 border-purple-200 hover:border-purple-500`}
+                className="group relative bg-white/80 backdrop-blur-lg hover:shadow-2xl p-8 rounded-2xl transition-all duration-500 transform hover:scale-105 text-left border border-white/60 hover:border-purple-400/50 overflow-hidden card-hover-lift"
               >
-                <div className="mb-4 flex items-center gap-3">
-                  <IconComponent className="w-8 h-8 text-purple-600" />
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold">
-                      {category.name[language]}
-                    </h3>
-                    <p className="text-sm text-gray-600">{category.years}</p>
-                  </div>
-                </div>
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500 rounded-2xl"></div>
 
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">
-                      {language === 'cn' ? '观看进度' : 'Progress'}
-                    </span>
-                    <span className="font-semibold">
-                      {watchedCount} / {totalCount}
-                    </span>
+                <div className="relative z-10">
+                  <div className="mb-6 flex items-center gap-4">
+                    <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow">
+                      <IconComponent className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors">
+                        {category.name[language]}
+                      </h3>
+                      <p className="text-sm text-gray-500 font-medium">{category.years}</p>
+                    </div>
                   </div>
 
-                  {/* Progress Bar */}
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      className="bg-purple-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${percentage}%` }}
-                    />
-                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600 font-medium">
+                        {language === 'cn' ? '观看进度' : 'Progress'}
+                      </span>
+                      <span className="font-bold text-purple-600">
+                        {watchedCount} / {totalCount}
+                      </span>
+                    </div>
 
-                  <div className="text-right text-sm text-gray-600">
-                    {percentage}%
+                    {/* Progress Bar */}
+                    <div className="relative w-full bg-gray-200 rounded-full h-3 overflow-hidden shadow-inner">
+                      <div
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 rounded-full transition-all duration-500 shadow-md"
+                        style={{ width: `${percentage}%` }}
+                      />
+                    </div>
+
+                    <div className="text-right">
+                      <span className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        {percentage}%
+                      </span>
+                    </div>
                   </div>
                 </div>
               </button>

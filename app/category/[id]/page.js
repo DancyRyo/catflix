@@ -101,24 +101,32 @@ export default function CategoryPage() {
   const totalItems = years.reduce((acc, year) => acc + data[year].length, 0);
 
   return (
-    <div className="min-h-screen bg-purple-50 text-gray-900 flex flex-col">
+    <div className="min-h-screen text-gray-900 flex flex-col relative">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50"></div>
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
       <Navbar />
 
       {/* Sub Header */}
-      <div className="bg-white border-b border-purple-200 py-6 px-8 sticky top-0 z-10 shadow-sm">
+      <div className="backdrop-blur-xl bg-white/70 border-b border-white/20 py-6 px-8 sticky top-[73px] z-40 shadow-lg">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <h1 className="text-3xl font-bold text-purple-600">
+            <h1 className="text-4xl font-bold gradient-text">
               {currentCategory.name[language]}
             </h1>
           </div>
           <div className="flex items-center gap-4">
-            <div className="text-sm text-gray-700 bg-purple-100 px-4 py-2 rounded-lg">
-              {language === 'cn' ? '已观看' : 'Watched'}: <span className="font-bold text-purple-700">{totalWatched} / {totalItems}</span>
+            <div className="text-sm text-gray-700 bg-gradient-to-r from-purple-100 to-pink-100 px-5 py-3 rounded-xl shadow-md backdrop-blur-sm border border-white/60">
+              {language === 'cn' ? '已观看' : 'Watched'}: <span className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{totalWatched} / {totalItems}</span>
             </div>
             <button
               onClick={handleGenerateSummary}
-              className="px-4 py-2 bg-purple-600 text-white hover:bg-purple-700 rounded-lg transition-all duration-200 font-semibold shadow-md hover:shadow-lg"
+              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 rounded-xl transition-all duration-300 font-semibold shadow-lg hover:shadow-xl hover:scale-105"
             >
               {language === 'cn' ? '生成总结' : 'Generate Summary'}
             </button>
@@ -127,7 +135,7 @@ export default function CategoryPage() {
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-7xl mx-auto py-12 px-8 w-full">
+      <main className="flex-1 max-w-7xl mx-auto py-16 px-8 w-full">
         {years.map((year) => {
           const items = data[year];
           const yearWatched = items.filter(
@@ -135,17 +143,17 @@ export default function CategoryPage() {
           ).length;
 
           return (
-            <div key={year} className="mb-12">
-              <div className="mb-6 bg-white/50 backdrop-blur-sm p-4 rounded-lg border border-purple-200">
-                <div className="flex items-center justify-between mb-2">
-                  <h2 className="text-2xl font-bold text-purple-900">{year}</h2>
-                  <span className="text-gray-700 font-semibold bg-purple-100 px-3 py-1 rounded-full">
+            <div key={year} className="mb-16">
+              <div className="mb-8 bg-white/80 backdrop-blur-lg p-6 rounded-2xl border border-white/60 shadow-lg">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{year}</h2>
+                  <span className="text-gray-700 font-bold bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full shadow-md border border-white/60">
                     {yearWatched} / {items.length}
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
+                <div className="relative w-full bg-gray-200 rounded-full h-4 overflow-hidden shadow-inner">
                   <div
-                    className="bg-purple-600 h-3 rounded-full transition-all duration-300 shadow-sm"
+                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 rounded-full transition-all duration-500 shadow-md"
                     style={{
                       width: `${(yearWatched / items.length) * 100}%`,
                     }}
@@ -154,18 +162,18 @@ export default function CategoryPage() {
               </div>
 
               {/* Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
                 {items.map((item) => {
                   const isWatched = watched[categoryId]?.[item.id];
                   return (
                     <button
                       key={item.id}
                       onClick={() => toggleWatched(categoryId, item.id)}
-                      className={`aspect-square p-4 rounded-lg border-2 transition-all duration-200 flex items-center justify-center text-center text-sm font-medium shadow-sm hover:shadow-md
+                      className={`aspect-square p-4 rounded-2xl transition-all duration-300 flex items-center justify-center text-center text-sm font-semibold shadow-lg hover:shadow-2xl transform hover:scale-105 border-2
                         ${
                           isWatched
-                            ? 'bg-purple-600 text-white border-purple-600'
-                            : 'bg-white text-gray-900 border-purple-200 hover:border-purple-400 hover:bg-purple-50'
+                            ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-400/50'
+                            : 'bg-white/80 backdrop-blur-sm text-gray-800 border-white/60 hover:border-purple-400/50 hover:bg-white/90'
                         }`}
                       title={item[language]}
                     >
