@@ -39,6 +39,28 @@ export default function ReadingPage() {
     }
   }, []);
 
+  // 键盘事件监听器 - 用于阅读模式
+  useEffect(() => {
+    if (!readingMode) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handlePrev();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleNext();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        setReadingMode(false);
+        setCurrentIndex(0);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [readingMode, currentIndex, filteredQuotes.length]);
+
   // 保存用户引用到 localStorage
   const saveUserQuote = (quote) => {
     const newUserQuote = {
@@ -240,10 +262,10 @@ export default function ReadingPage() {
                 {language === 'cn' ? '上一个' : 'Previous'}
               </button>
 
-              <div className="text-gray-600 text-sm font-medium bg-white/80 px-6 py-3 rounded-xl backdrop-blur-sm border border-white/60 shadow-md">
+              <div className="text-gray-600 text-sm font-medium bg-white/80 px-6 py-3 rounded-xl backdrop-blur-sm border border-white/60 shadow-md text-center">
                 {language === 'cn'
-                  ? '提示：使用方向键 ← → 切换'
-                  : 'Tip: Use arrow keys ← → to navigate'}
+                  ? '提示：使用方向键 ← → 切换，Esc 退出'
+                  : 'Tip: Use ← → to navigate, Esc to exit'}
               </div>
 
               <button
