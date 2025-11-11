@@ -86,6 +86,16 @@ export function AppProvider({ children }) {
     return records.filter((record) => record.type === type);
   };
 
+  const clearRecordsByType = (type) => {
+    setRecords((prev) => prev.filter((record) => record.type !== type));
+  };
+
+  const clearAllRecords = () => {
+    if (window.confirm(language === 'cn' ? '确定要清空所有记录吗？此操作无法撤销。' : 'Are you sure you want to clear all records? This action cannot be undone.')) {
+      setRecords([]);
+    }
+  };
+
   const value = {
     language,
     setLanguage,
@@ -98,6 +108,8 @@ export function AppProvider({ children }) {
     updateRecord,
     deleteRecord,
     getRecordsByType,
+    clearRecordsByType,
+    clearAllRecords,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

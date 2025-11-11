@@ -23,26 +23,26 @@ export default function RecordCard({ record, onEdit }) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-white/60 hover:border-purple-400/50">
       {/* Image */}
       {record.image && (
-        <div className="h-70 overflow-hidden bg-gray-200">
+        <div className="h-70 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
           <img
             src={record.image}
             alt={record.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
           />
         </div>
       )}
 
       {/* Content */}
-      <div className="p-3">
+      <div className="p-4">
         {/* Status Badge */}
-        <div className="flex justify-between items-start mb-2">
+        <div className="flex justify-between items-start mb-3">
           <span
-            className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${record.status === 'watched'
-              ? 'bg-green-100 text-green-800'
-              : 'bg-blue-100 text-blue-800'
+            className={`inline-block px-3 py-1 rounded-xl text-xs font-bold shadow-sm ${record.status === 'watched'
+              ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+              : 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
               }`}
           >
             {record.status === 'watched'
@@ -55,17 +55,17 @@ export default function RecordCard({ record, onEdit }) {
           </span>
 
           {/* Action Buttons */}
-          <div className="flex gap-1">
+          <div className="flex gap-2">
             <button
               onClick={() => onEdit(record)}
-              className="text-purple-600 hover:text-purple-800 transition-colors p-1"
+              className="text-purple-600 hover:text-purple-800 transition-all p-1.5 rounded-lg hover:bg-purple-50"
               title={language === 'cn' ? '编辑' : 'Edit'}
             >
               <Edit2 size={16} />
             </button>
             <button
               onClick={() => setShowDeleteConfirm(true)}
-              className="text-red-600 hover:text-red-800 transition-colors p-1"
+              className="text-red-600 hover:text-red-800 transition-all p-1.5 rounded-lg hover:bg-red-50"
               title={language === 'cn' ? '删除' : 'Delete'}
             >
               <Trash2 size={16} />
@@ -119,12 +119,12 @@ export default function RecordCard({ record, onEdit }) {
 
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 max-w-sm mx-4">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white/95 backdrop-blur-lg rounded-2xl p-8 max-w-sm mx-4 shadow-2xl border border-white/60 transform transition-all">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {language === 'cn' ? '确认删除' : 'Confirm Delete'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-8 leading-relaxed">
               {language === 'cn'
                 ? '确定要删除这条记录吗？此操作无法撤销。'
                 : 'Are you sure you want to delete this record? This action cannot be undone.'}
@@ -132,13 +132,13 @@ export default function RecordCard({ record, onEdit }) {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowDeleteConfirm(false)}
-                className="flex-1 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all"
+                className="flex-1 px-6 py-3 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition-all font-semibold shadow-md hover:shadow-lg"
               >
                 {language === 'cn' ? '取消' : 'Cancel'}
               </button>
               <button
                 onClick={handleDelete}
-                className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all"
+                className="flex-1 px-6 py-3 bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-xl hover:from-red-600 hover:to-rose-600 transition-all font-semibold shadow-md hover:shadow-lg"
               >
                 {language === 'cn' ? '删除' : 'Delete'}
               </button>

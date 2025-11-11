@@ -7,21 +7,25 @@ import Footer from '../components/Footer';
 import RecordForm from '../components/RecordForm';
 import RecordCard from '../components/RecordCard';
 import { useRouter } from 'next/navigation';
-import { BookOpen, Gamepad2, Film, Palette, Star, Plus } from 'lucide-react';
+import { BookOpen, Gamepad2, Film, Palette, Star, Plus, Trash2 } from 'lucide-react';
 
 export default function RecordsPage() {
-  const { language, records, getRecordsByType } = useApp();
+  const { language, records, getRecordsByType, clearRecordsByType, clearAllRecords } = useApp();
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState('books');
+  const [activeTab, setActiveTab] = useState('movies');
   const [showForm, setShowForm] = useState(false);
   const [editingRecord, setEditingRecord] = useState(null);
   const [statusFilter, setStatusFilter] = useState('all'); // all, watched, wishlist
+  const [showClearMenu, setShowClearMenu] = useState(false);
 
   const tabs = [
+    { id: 'movies', cn: '电影', en: 'Movies', icon: Film },
+    { id: 'tv-shows', cn: '剧集', en: 'TV Shows', icon: Film },
+    { id: 'anime', cn: '动漫', en: 'Anime', icon: Palette },
     { id: 'books', cn: '书籍', en: 'Books', icon: BookOpen },
     { id: 'games', cn: '游戏', en: 'Games', icon: Gamepad2 },
-    { id: 'movies', cn: '电影', en: 'Movies', icon: Film },
-    { id: 'anime', cn: '动漫', en: 'Anime', icon: Palette },
+    { id: 'japanese-dramas', cn: '日剧', en: 'Japanese Dramas', icon: Film },
+    { id: 'korean-dramas', cn: '韩剧', en: 'Korean Dramas', icon: Film },
   ];
 
   const currentTabData = tabs.find((tab) => tab.id === activeTab);
@@ -43,6 +47,13 @@ export default function RecordsPage() {
   const handleCloseForm = () => {
     setShowForm(false);
     setEditingRecord(null);
+  };
+
+  const handleClearCurrentType = () => {
+    if (window.confirm(language === 'cn' ? `确定要清空所有${currentTabData?.cn}记录吗？此操作无法撤销。` : `Clear all ${currentTabData?.en} records? This cannot be undone.`)) {
+      clearRecordsByType(activeTab);
+      setShowClearMenu(false);
+    }
   };
 
   return (
@@ -86,6 +97,44 @@ export default function RecordsPage() {
                 <Plus size={18} />
                 {language === 'cn' ? '添加记录' : 'Add Record'}
               </button>
+
+              {/* Clear Button with Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setShowClearMenu(!showClearMenu)}
+                  className="px-6 py-3 bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-xl hover:from-red-600 hover:to-rose-600 transition-all duration-300 flex items-center gap-2 font-medium shadow-lg hover:shadow-xl hover:scale-105"
+                >
+                  <Trash2 size={18} />
+                  {language === 'cn' ? '清空' : 'Clear'}
+                </button>
+
+                {showClearMenu && (
+                  <>
+                    {/* Backdrop to close menu */}
+                    <div
+                      className="fixed inset-0 z-40"
+                      onClick={() => setShowClearMenu(false)}
+                    />
+                    <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden z-50">
+                      <button
+                        onClick={handleClearCurrentType}
+                        className="w-full px-4 py-3 text-left hover:bg-red-50 transition-colors text-gray-700 hover:text-red-600 border-b border-gray-100 font-medium"
+                      >
+                        {language === 'cn' ? `清空当前分类 (${tabRecords.length})` : `Clear Current (${tabRecords.length})`}
+                      </button>
+                      <button
+                        onClick={() => {
+                          clearAllRecords();
+                          setShowClearMenu(false);
+                        }}
+                        className="w-full px-4 py-3 text-left hover:bg-red-50 transition-colors text-gray-700 hover:text-red-600 font-medium"
+                      >
+                        {language === 'cn' ? `清空所有记录 (${records.length})` : `Clear All (${records.length})`}
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         </div>

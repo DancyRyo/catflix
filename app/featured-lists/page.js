@@ -46,12 +46,15 @@ export default function FeaturedListsPage() {
 
     // Show a brief notification
     const notification = document.createElement('div');
-    notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in';
-    notification.textContent = language === 'cn' ? '已添加到想看' : 'Added to wishlist';
+    notification.className = 'fixed bottom-8 right-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-2xl shadow-2xl z-50 animate-fade-in font-semibold border border-white/30';
+    notification.textContent = language === 'cn' ? '✓ 已添加到想看' : '✓ Added to wishlist';
     document.body.appendChild(notification);
 
     setTimeout(() => {
-      notification.remove();
+      notification.style.opacity = '0';
+      notification.style.transform = 'translateY(10px)';
+      notification.style.transition = 'all 0.3s ease-out';
+      setTimeout(() => notification.remove(), 300);
     }, 2000);
   };
 
@@ -64,19 +67,27 @@ export default function FeaturedListsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-purple-50 text-gray-900 flex flex-col">
+    <div className="min-h-screen text-gray-900 flex flex-col relative">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50"></div>
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+
       <Navbar />
 
-      <main className="flex-1 max-w-7xl mx-auto py-12 px-8 w-full">
+      <main className="flex-1 max-w-7xl mx-auto py-16 px-8 w-full">
         {!selectedList ? (
           <>
             {/* Header */}
-            <div className="mb-8">
-              <h1 className="text-4xl font-bold mb-3 text-purple-600 flex items-center gap-3">
-                <Star className="w-10 h-10" />
+            <div className="mb-12 text-center">
+              <h1 className="text-5xl font-bold mb-4 gradient-text flex items-center justify-center gap-3">
+                <Star className="w-12 h-12" />
                 {language === 'cn' ? '精选榜单' : 'Featured Lists'}
               </h1>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-600 text-xl max-w-3xl mx-auto">
                 {language === 'cn'
                   ? '从精选榜单中快速添加想看内容'
                   : 'Quickly add content from curated lists'}
@@ -84,25 +95,32 @@ export default function FeaturedListsPage() {
             </div>
 
             {/* Lists Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {lists.map((list) => {
                 const IconComponent = getIconComponent(list.icon);
                 return (
                   <button
                     key={list.id}
                     onClick={() => setSelectedList(list)}
-                    className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-all text-left transform hover:scale-105 border-2 border-purple-200 hover:border-purple-500"
+                    className="group relative bg-white/80 backdrop-blur-lg hover:shadow-2xl p-8 rounded-2xl transition-all duration-500 transform hover:scale-105 text-left border border-white/60 hover:border-purple-400/50 overflow-hidden card-hover-lift"
                   >
-                    <IconComponent className="w-12 h-12 text-purple-600 mb-3" />
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {language === 'cn' ? list.name.cn : list.name.en}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-3">
-                      {language === 'cn' ? list.description.cn : list.description.en}
-                    </p>
-                    <p className="text-purple-600 font-semibold">
-                      {list.items.length} {language === 'cn' ? '项' : 'items'}
-                    </p>
+                    {/* Gradient overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500 rounded-2xl"></div>
+
+                    <div className="relative z-10">
+                      <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow w-fit mb-4">
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
+                        {language === 'cn' ? list.name.cn : list.name.en}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                        {language === 'cn' ? list.description.cn : list.description.en}
+                      </p>
+                      <p className="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        {list.items.length} {language === 'cn' ? '项' : 'items'}
+                      </p>
+                    </div>
                   </button>
                 );
               })}
@@ -111,26 +129,30 @@ export default function FeaturedListsPage() {
         ) : (
           <>
             {/* List Detail View */}
-            <div className="mb-6">
+            <div className="mb-8">
               <button
                 onClick={() => setSelectedList(null)}
-                className="text-purple-600 hover:text-purple-800 mb-4 flex items-center gap-2"
+                className="mb-6 px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-xl hover:bg-white transition-all flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium shadow-md hover:shadow-lg border border-white/60"
               >
                 <ArrowLeft size={20} />
                 {language === 'cn' ? '返回' : 'Back'}
               </button>
 
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex items-center gap-3">
+              <div className="flex justify-between items-start mb-8 bg-white/80 backdrop-blur-lg p-6 rounded-2xl border border-white/60 shadow-lg">
+                <div className="flex items-center gap-4">
                   {(() => {
                     const IconComponent = getIconComponent(selectedList.icon);
-                    return <IconComponent className="w-10 h-10 text-purple-600" />;
+                    return (
+                      <div className="p-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-lg">
+                        <IconComponent className="w-10 h-10 text-white" />
+                      </div>
+                    );
                   })()}
                   <div>
-                    <h1 className="text-4xl font-bold mb-2">
+                    <h1 className="text-4xl font-bold mb-2 gradient-text">
                       {language === 'cn' ? selectedList.name.cn : selectedList.name.en}
                     </h1>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-lg">
                       {language === 'cn'
                         ? selectedList.description.cn
                         : selectedList.description.en}
@@ -140,7 +162,7 @@ export default function FeaturedListsPage() {
 
                 <button
                   onClick={() => handleBatchAdd(selectedList)}
-                  className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all whitespace-nowrap flex items-center gap-2"
+                  className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 whitespace-nowrap flex items-center gap-2 font-semibold shadow-lg hover:shadow-xl hover:scale-105"
                 >
                   <Plus size={18} />
                   {language === 'cn' ? '一键全部添加' : 'Add All'}
@@ -148,11 +170,11 @@ export default function FeaturedListsPage() {
               </div>
 
               {/* Items Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 {selectedList.items.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all border-2 border-purple-100 hover:border-purple-300"
+                    className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-white/60 hover:border-purple-400/50 transform hover:scale-105"
                   >
                     {item.image && (
                       <div className="h-76 overflow-hidden bg-gray-200">
@@ -178,9 +200,9 @@ export default function FeaturedListsPage() {
                       <button
                         onClick={() => handleAddToWishlist(item, selectedList.type)}
                         disabled={addedItems.has(item.title)}
-                        className={`w-full py-2 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-1 ${addedItems.has(item.title)
-                          ? 'bg-green-100 text-green-800 cursor-not-allowed'
-                          : 'bg-purple-600 text-white hover:bg-purple-700'
+                        className={`w-full py-2.5 rounded-xl text-sm font-bold transition-all duration-300 flex items-center justify-center gap-1 shadow-md ${addedItems.has(item.title)
+                          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white cursor-not-allowed'
+                          : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 hover:shadow-lg hover:scale-105'
                           }`}
                       >
                         {addedItems.has(item.title) ? (
