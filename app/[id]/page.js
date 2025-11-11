@@ -212,57 +212,56 @@ export default function CategoryPage() {
 
       {/* Main Content */}
       <main ref={mainContentRef} className="flex-1 max-w-7xl mx-auto py-8 px-8 w-full">
-        <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl border border-white/60 overflow-hidden">
-        {years.map((year) => {
-          const items = data[year];
-          const yearWatched = items.filter(
-            (item) => watched[categoryId]?.[item.id]
-          ).length;
+        <div className="bg-white/90 backdrop-blur-lg rounded-md  px-8 py-8 border border-white/60 overflow-hidden">
+          {years.map((year) => {
+            const items = data[year];
+            const yearWatched = items.filter(
+              (item) => watched[categoryId]?.[item.id]
+            ).length;
 
-          return (
-            <div key={year}>
-              <div className="flex items-center gap-6 py-1 hover:bg-purple-50/50 transition-colors">
-                {/* Left: Year and Progress */}
-                <div className="flex-shrink-0 w-28 text-center">
-                  <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-1">{year}</h2>
-                  <span className="text-xs text-gray-700 font-bold bg-gradient-to-r from-purple-100 to-pink-100 px-2 py-0.5 rounded-full inline-block">
-                    {yearWatched}/{items.length}
-                  </span>
-                  <div className="mt-1.5 relative w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                    <div
-                      className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-500"
-                      style={{
-                        width: `${(yearWatched / items.length) * 100}%`,
-                      }}
-                    />
+            return (
+              <div key={year}>
+                <div className="flex items-center gap-6 py-1 hover:bg-purple-50/50 transition-colors">
+                  {/* Left: Year and Progress */}
+                  <div className="flex-shrink-0 w-28 text-center">
+                    <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-1">{year}</h2>
+                    <span className="text-xs text-gray-700 font-bold bg-gradient-to-r from-purple-100 to-pink-100 px-2 py-0.5 rounded-full inline-block">
+                      {yearWatched}/{items.length}
+                    </span>
+                    <div className="mt-1.5 relative w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                      <div
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-500"
+                        style={{
+                          width: `${(yearWatched / items.length) * 100}%`,
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
 
-                {/* Right: Grid of Items */}
-                <div className="flex-1 grid grid-cols-12 gap-1.5">
-                  {items.map((item) => {
-                    const isWatched = watched[categoryId]?.[item.id];
-                    return (
-                      <button
-                        key={item.id}
-                        onClick={() => toggleWatched(categoryId, item.id)}
-                        className={`aspect-square p-1 rounded-md transition-all duration-300 flex items-center justify-center text-center text-xs font-semibold shadow-sm hover:shadow-lg transform hover:scale-110 border
-                          ${
-                            isWatched
+                  {/* Right: Grid of Items */}
+                  <div className="flex-1 grid grid-cols-12 gap-1.5">
+                    {items.map((item) => {
+                      const isWatched = watched[categoryId]?.[item.id];
+                      return (
+                        <button
+                          key={item.id}
+                          onClick={() => toggleWatched(categoryId, item.id)}
+                          className={`aspect-square p-1.5 rounded-md transition-all duration-300 flex items-center justify-center text-center font-semibold  hover:shadow-lg transform hover:scale-110 border
+                          ${isWatched
                               ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-400/50'
                               : 'bg-white text-gray-800 border-gray-300 hover:border-purple-400 hover:bg-purple-50'
-                          }`}
-                        title={item[language]}
-                      >
-                        <span className="line-clamp-2 leading-tight text-[10px]">{item[language]}</span>
-                      </button>
-                    );
-                  })}
+                            }`}
+                          title={item[language]}
+                        >
+                          <span className="line-clamp-4 leading-tight text-xs">{item[language]}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
         </div>
       </main>
 
