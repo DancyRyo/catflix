@@ -6,13 +6,14 @@ import { featuredLists } from '../data/featuredLists';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/navigation';
-import { Star, Film, BookOpen, Palette, Sparkles, Trophy, Award, Gamepad2, Plus, Check, ArrowLeft } from 'lucide-react';
+import { Star, Film, BookOpen, Palette, Sparkles, Trophy, Award, Gamepad2, Plus, Check, ArrowLeft, Eye } from 'lucide-react';
 
 export default function FeaturedListsPage() {
   const { language, addRecord } = useApp();
   const router = useRouter();
   const [selectedList, setSelectedList] = useState(null);
   const [addedItems, setAddedItems] = useState(new Set());
+  const [watchedItems, setWatchedItems] = useState(new Set());
 
   const lists = Object.values(featuredLists);
 
@@ -48,6 +49,34 @@ export default function FeaturedListsPage() {
     const notification = document.createElement('div');
     notification.className = 'fixed bottom-8 right-8 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-2xl shadow-2xl z-50 animate-fade-in font-semibold border border-white/30';
     notification.textContent = language === 'cn' ? '✓ 已添加到想看' : '✓ Added to wishlist';
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+      notification.style.opacity = '0';
+      notification.style.transform = 'translateY(10px)';
+      notification.style.transition = 'all 0.3s ease-out';
+      setTimeout(() => notification.remove(), 300);
+    }, 2000);
+  };
+
+  const handleAddToWatched = (item, listType) => {
+    const record = {
+      type: listType,
+      title: language === 'cn' ? item.title : item.en,
+      image: item.image || '',
+      note: item.author ? `${language === 'cn' ? '作者' : 'Author'}: ${language === 'cn' ? item.author.cn : item.author.en}` : '',
+      feelings: '',
+      rating: 0,
+      status: 'watched',
+    };
+
+    addRecord(record);
+    setWatchedItems((prev) => new Set([...prev, item.title]));
+
+    // Show a brief notification
+    const notification = document.createElement('div');
+    notification.className = 'fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-8 py-4 rounded-2xl shadow-2xl z-50 animate-fade-in font-semibold border border-white/30';
+    notification.textContent = language === 'cn' ? '✓ 已添加到看过' : '✓ Added to watched';
     document.body.appendChild(notification);
 
     setTimeout(() => {
@@ -197,26 +226,49 @@ export default function FeaturedListsPage() {
                         </p>
                       )}
 
-                      <button
-                        onClick={() => handleAddToWishlist(item, selectedList.type)}
-                        disabled={addedItems.has(item.title)}
-                        className={`w-full py-2.5 rounded-xl text-sm font-bold transition-all duration-300 flex items-center justify-center gap-1 shadow-md ${addedItems.has(item.title)
-                          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white cursor-not-allowed'
-                          : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 hover:shadow-lg hover:scale-105'
-                          }`}
-                      >
-                        {addedItems.has(item.title) ? (
-                          <>
-                            <Check size={16} />
-                            {language === 'cn' ? '已添加' : 'Added'}
-                          </>
-                        ) : (
-                          <>
-                            <Plus size={16} />
-                            {language === 'cn' ? '想看' : 'Wishlist'}
-                          </>
-                        )}
-                      </button>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => handleAddToWishlist(item, selectedList.type)}
+                          disabled={addedItems.has(item.title)}
+                          className={`flex-1 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-1 shadow-md ${addedItems.has(item.title)
+                            ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white cursor-not-allowed'
+                            : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 hover:shadow-lg hover:scale-105'
+                            }`}
+                        >
+                          {addedItems.has(item.title) ? (
+                            <>
+                              <Check size={14} />
+                              {language === 'cn' ? '已添加' : 'Added'}
+                            </>
+                          ) : (
+                            <>
+                              <Plus size={14} />
+                              {language === 'cn' ? '想看' : 'Wishlist'}
+                            </>
+                          )}
+                        </button>
+
+                        <button
+                          onClick={() => handleAddToWatched(item, selectedList.type)}
+                          disabled={watchedItems.has(item.title)}
+                          className={`flex-1 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 flex items-center justify-center gap-1 shadow-md ${watchedItems.has(item.title)
+                            ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white cursor-not-allowed'
+                            : 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white hover:from-blue-600 hover:to-indigo-600 hover:shadow-lg hover:scale-105'
+                            }`}
+                        >
+                          {watchedItems.has(item.title) ? (
+                            <>
+                              <Check size={14} />
+                              {language === 'cn' ? '已添加' : 'Added'}
+                            </>
+                          ) : (
+                            <>
+                              <Eye size={14} />
+                              {language === 'cn' ? '看过' : 'Watched'}
+                            </>
+                          )}
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}
