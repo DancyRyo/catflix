@@ -220,8 +220,8 @@ export default function CategoryPage() {
           ).length;
 
           return (
-            <div key={year} className="border-b border-purple-200 last:border-b-0">
-              <div className="flex items-center gap-6 py-3 hover:bg-purple-50/50 transition-colors">
+            <div key={year}>
+              <div className="flex items-center gap-6 py-1 hover:bg-purple-50/50 transition-colors">
                 {/* Left: Year and Progress */}
                 <div className="flex-shrink-0 w-28 text-center">
                   <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-1">{year}</h2>
