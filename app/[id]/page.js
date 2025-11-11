@@ -211,7 +211,8 @@ export default function CategoryPage() {
       </div>
 
       {/* Main Content */}
-      <main ref={mainContentRef} className="flex-1 max-w-7xl mx-auto py-16 px-8 w-full">
+      <main ref={mainContentRef} className="flex-1 max-w-7xl mx-auto py-8 px-8 w-full">
+        <div className="bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl border border-white/60 overflow-hidden">
         {years.map((year) => {
           const items = data[year];
           const yearWatched = items.filter(
@@ -219,19 +220,17 @@ export default function CategoryPage() {
           ).length;
 
           return (
-            <div key={year} className="mb-6 bg-white/80 backdrop-blur-lg p-4 rounded-2xl border border-white/60 shadow-lg">
-              <div className="flex items-start gap-6">
+            <div key={year} className="border-b border-purple-200 last:border-b-0">
+              <div className="flex items-center gap-6 py-3 hover:bg-purple-50/50 transition-colors">
                 {/* Left: Year and Progress */}
-                <div className="flex-shrink-0 w-32">
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3">{year}</h2>
-                  <div className="text-center">
-                    <span className="text-sm text-gray-700 font-bold bg-gradient-to-r from-purple-100 to-pink-100 px-3 py-1.5 rounded-full shadow-md border border-white/60 inline-block">
-                      {yearWatched} / {items.length}
-                    </span>
-                  </div>
-                  <div className="mt-3 relative w-full bg-gray-200 rounded-full h-2 overflow-hidden shadow-inner">
+                <div className="flex-shrink-0 w-28 text-center">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-1">{year}</h2>
+                  <span className="text-xs text-gray-700 font-bold bg-gradient-to-r from-purple-100 to-pink-100 px-2 py-0.5 rounded-full inline-block">
+                    {yearWatched}/{items.length}
+                  </span>
+                  <div className="mt-1.5 relative w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
                     <div
-                      className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 rounded-full transition-all duration-500 shadow-md"
+                      className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-500"
                       style={{
                         width: `${(yearWatched / items.length) * 100}%`,
                       }}
@@ -240,22 +239,22 @@ export default function CategoryPage() {
                 </div>
 
                 {/* Right: Grid of Items */}
-                <div className="flex-1 grid grid-cols-12 gap-2">
+                <div className="flex-1 grid grid-cols-12 gap-1.5">
                   {items.map((item) => {
                     const isWatched = watched[categoryId]?.[item.id];
                     return (
                       <button
                         key={item.id}
                         onClick={() => toggleWatched(categoryId, item.id)}
-                        className={`aspect-square p-1.5 rounded-lg transition-all duration-300 flex items-center justify-center text-center text-xs font-semibold shadow-md hover:shadow-xl transform hover:scale-110 border
+                        className={`aspect-square p-1 rounded-md transition-all duration-300 flex items-center justify-center text-center text-xs font-semibold shadow-sm hover:shadow-lg transform hover:scale-110 border
                           ${
                             isWatched
                               ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-400/50'
-                              : 'bg-white/80 backdrop-blur-sm text-gray-800 border-white/60 hover:border-purple-400/50 hover:bg-white/90'
+                              : 'bg-white text-gray-800 border-gray-300 hover:border-purple-400 hover:bg-purple-50'
                           }`}
                         title={item[language]}
                       >
-                        <span className="line-clamp-2 leading-tight">{item[language]}</span>
+                        <span className="line-clamp-2 leading-tight text-[10px]">{item[language]}</span>
                       </button>
                     );
                   })}
@@ -264,6 +263,7 @@ export default function CategoryPage() {
             </div>
           );
         })}
+        </div>
       </main>
 
       <Footer />
