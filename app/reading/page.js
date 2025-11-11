@@ -78,21 +78,29 @@ export default function ReadingPage() {
     const currentQuote = filteredQuotes[currentIndex];
 
     return (
-      <div className="min-h-screen bg-purple-900 text-white flex flex-col">
+      <div className="min-h-screen text-gray-900 flex flex-col relative">
+        {/* Animated gradient background */}
+        <div className="fixed inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50"></div>
+          <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+          <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+
         {/* Header */}
-        <div className="p-6 flex justify-between items-center bg-purple-800">
+        <div className="p-6 flex justify-between items-center backdrop-blur-xl bg-white/80 border-b border-white/20 shadow-lg">
           <button
             onClick={() => {
               setReadingMode(false);
               setCurrentIndex(0);
             }}
-            className="px-4 py-2 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg transition-all flex items-center gap-2"
+            className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 rounded-xl transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 font-semibold"
           >
             <X size={20} />
             {language === 'cn' ? '退出阅读模式' : 'Exit Reading Mode'}
           </button>
 
-          <div className="text-gray-300">
+          <div className="text-gray-800 font-bold bg-gradient-to-r from-purple-100 to-pink-100 px-5 py-3 rounded-xl shadow-md border border-white/60">
             {currentIndex + 1} / {filteredQuotes.length}
           </div>
         </div>
@@ -101,45 +109,45 @@ export default function ReadingPage() {
         <div className="flex-1 flex items-center justify-center p-8">
           <div className="max-w-4xl w-full">
             {/* Quote Card */}
-            <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-12 shadow-2xl">
+            <div className="bg-white/90 backdrop-blur-xl rounded-2xl p-12 shadow-2xl border border-white/60">
               {/* Quote Text */}
               <div className="mb-8">
-                <p className="text-3xl font-medium leading-relaxed mb-6">
+                <p className="text-3xl font-medium leading-relaxed mb-6 text-gray-800">
                   "{currentQuote[language]}"
                 </p>
-                <p className="text-xl text-gray-300 italic leading-relaxed">
+                <p className="text-xl text-gray-600 italic leading-relaxed">
                   "{language === 'cn' ? currentQuote.en : currentQuote.cn}"
                 </p>
               </div>
 
               {/* Divider */}
-              <div className="border-t border-purple-400 my-8"></div>
+              <div className="border-t border-purple-300 my-8"></div>
 
               {/* Author and Source */}
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <User className="w-5 h-5 text-purple-300" />
-                  <span className="text-lg text-purple-200">
+                  <User className="w-5 h-5 text-purple-600" />
+                  <span className="text-lg text-gray-600">
                     {language === 'cn' ? '作者：' : 'Author: '}
-                    <span className="text-white font-semibold">
+                    <span className="text-gray-900 font-semibold">
                       {currentQuote.author[language]}
                     </span>
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <BookOpen className="w-5 h-5 text-purple-300" />
-                  <span className="text-lg text-purple-200">
+                  <BookOpen className="w-5 h-5 text-purple-600" />
+                  <span className="text-lg text-gray-600">
                     {language === 'cn' ? '来源：' : 'Source: '}
-                    <span className="text-white font-semibold">
+                    <span className="text-gray-900 font-semibold">
                       {currentQuote.source[language]}
                     </span>
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Tag className="w-5 h-5 text-purple-300" />
-                  <span className="text-lg text-purple-200">
+                  <Tag className="w-5 h-5 text-purple-600" />
+                  <span className="text-lg text-gray-600">
                     {language === 'cn' ? '类别：' : 'Category: '}
-                    <span className="text-white font-semibold capitalize">
+                    <span className="text-gray-900 font-semibold capitalize">
                       {currentQuote.category === 'anime' && (language === 'cn' ? '动漫' : 'Anime')}
                       {currentQuote.category === 'movies' && (language === 'cn' ? '电影' : 'Movies')}
                       {currentQuote.category === 'books' && (language === 'cn' ? '书籍' : 'Books')}
@@ -155,17 +163,17 @@ export default function ReadingPage() {
               <button
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
-                className={`px-6 py-3 rounded-lg transition-all flex items-center gap-2 ${
+                className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 font-semibold shadow-lg ${
                   currentIndex === 0
-                    ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                    : 'bg-white bg-opacity-10 hover:bg-opacity-20'
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-white/90 text-gray-800 hover:bg-white hover:shadow-xl hover:scale-105 border border-white/60'
                 }`}
               >
                 <ArrowLeft size={20} />
                 {language === 'cn' ? '上一个' : 'Previous'}
               </button>
 
-              <div className="text-gray-400 text-sm">
+              <div className="text-gray-600 text-sm font-medium bg-white/80 px-6 py-3 rounded-xl backdrop-blur-sm border border-white/60 shadow-md">
                 {language === 'cn'
                   ? '提示：使用方向键 ← → 切换'
                   : 'Tip: Use arrow keys ← → to navigate'}
@@ -174,10 +182,10 @@ export default function ReadingPage() {
               <button
                 onClick={handleNext}
                 disabled={currentIndex === filteredQuotes.length - 1}
-                className={`px-6 py-3 rounded-lg transition-all flex items-center gap-2 ${
+                className={`px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 font-semibold shadow-lg ${
                   currentIndex === filteredQuotes.length - 1
-                    ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                    : 'bg-white bg-opacity-10 hover:bg-opacity-20'
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : 'bg-white/90 text-gray-800 hover:bg-white hover:shadow-xl hover:scale-105 border border-white/60'
                 }`}
               >
                 {language === 'cn' ? '下一个' : 'Next'}
