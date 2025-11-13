@@ -359,6 +359,1142 @@ export const quotesData = {
       source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
       author: { cn: '利威尔', en: 'Levi Ackerman' },
       category: 'anime'
+    },
+    {
+      id: 'anime-46',
+      cn: '真正重要的东西，用眼睛是看不见的。',
+      en: 'What is truly important cannot be seen with the eyes.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '旗木卡卡西', en: 'Kakashi Hatake' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-47',
+      cn: '痛苦让人成长。',
+      en: 'Pain makes people grow.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '长门', en: 'Nagato' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-48',
+      cn: '不知道痛苦的人，是无法理解真正的和平的。',
+      en: 'Those who do not know pain cannot understand true peace.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '长门', en: 'Nagato' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-49',
+      cn: '憎恨只会招致更多的憎恨。',
+      en: 'Hatred only begets more hatred.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '长门', en: 'Nagato' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-50',
+      cn: '我想改变这个世界，但现实改变了我。',
+      en: 'I wanted to change the world, but reality changed me.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波带土', en: 'Obito Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-51',
+      cn: '忍者的世界，只有规则被打破的人才能被称为废物，但是不珍惜同伴的人连废物都不如。',
+      en: 'In the ninja world, those who break the rules are scum, but those who abandon their friends are worse than scum.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波带土', en: 'Obito Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-52',
+      cn: '能原谅自己的人，才能真正原谅别人。',
+      en: 'Only those who can forgive themselves can truly forgive others.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波鼬', en: 'Itachi Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-53',
+      cn: '人就是这样，越是没有实力越爱说大话。',
+      en: 'That is how people are. The less strength they have, the more they talk.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波鼬', en: 'Itachi Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-54',
+      cn: '不懂得自己痛苦的人，是永远都不会懂得别人的痛苦的。',
+      en: 'Those who do not understand their own pain will never understand the pain of others.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波鼬', en: 'Itachi Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-55',
+      cn: '所谓忍者，就是要能忍受一切。',
+      en: 'A ninja is one who endures everything.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '自来也', en: 'Jiraiya' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-56',
+      cn: '真正的胜利不是打败对手，而是保护自己想要保护的人。',
+      en: 'True victory is not defeating the opponent, but protecting those you want to protect.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '波风水门', en: 'Minato Namikaze' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-57',
+      cn: '火影的职责，就是保护村子里的每一个人。',
+      en: 'The duty of the Hokage is to protect everyone in the village.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '千手柱间', en: 'Hashirama Senju' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-58',
+      cn: '为了保护重要的东西，人会变得非常强大。',
+      en: 'People become incredibly strong when protecting something precious.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '白', en: 'Haku' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-59',
+      cn: '有梦想的人，才能活得有意义。',
+      en: 'Only those with dreams can live meaningfully.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '春野樱', en: 'Sakura Haruno' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-60',
+      cn: '人生没有捷径，只有坚持不懈的努力。',
+      en: 'There are no shortcuts in life, only persistent effort.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: 'Rock Lee', en: 'Rock Lee' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-61',
+      cn: '即使是天才，不努力也会被努力的人超越。',
+      en: 'Even geniuses will be surpassed by those who work hard.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: 'Rock Lee', en: 'Rock Lee' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-62',
+      cn: '只要还有人在，村子就不会消失。',
+      en: 'As long as there are people, the village will not disappear.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '千手扉间', en: 'Tobirama Senju' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-63',
+      cn: '过去的伤痛，是为了让我们变得更强。',
+      en: 'Past pain is meant to make us stronger.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '我爱罗', en: 'Gaara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-64',
+      cn: '孤独让我们学会独立，但友情让我们更强大。',
+      en: 'Loneliness teaches us independence, but friendship makes us stronger.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '我爱罗', en: 'Gaara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-65',
+      cn: '真正的力量来自于内心的平静。',
+      en: 'True power comes from inner peace.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '漩涡鸣人', en: 'Naruto Uzumaki' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-66',
+      cn: '命运不是天注定的，而是自己创造的。',
+      en: 'Destiny is not predetermined, but created by oneself.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '日向宁次', en: 'Neji Hyuga' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-67',
+      cn: '失败是成功之母。',
+      en: 'Failure is the mother of success.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '奈良鹿丸', en: 'Shikamaru Nara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-68',
+      cn: '聪明不代表强大，坚持才是真正的力量。',
+      en: 'Intelligence does not mean strength; perseverance is true power.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '奈良鹿丸', en: 'Shikamaru Nara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-69',
+      cn: '保护同伴是忍者最重要的使命。',
+      en: 'Protecting comrades is the most important mission of a ninja.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '山中井野', en: 'Ino Yamanaka' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-70',
+      cn: '爱是最强大的力量，也是最脆弱的情感。',
+      en: 'Love is the strongest power, yet the most fragile emotion.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '日向雏田', en: 'Hinata Hyuga' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-71',
+      cn: '勇气不是没有恐惧，而是面对恐惧。',
+      en: 'Courage is not the absence of fear, but facing fear.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '日向雏田', en: 'Hinata Hyuga' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-72',
+      cn: '世界是残酷的，但正因如此，我们才要努力改变它。',
+      en: 'The world is cruel, but that is why we must strive to change it.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波佐助', en: 'Sasuke Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-73',
+      cn: '复仇不能带来和平，只会带来更多痛苦。',
+      en: 'Revenge does not bring peace, only more pain.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波佐助', en: 'Sasuke Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-74',
+      cn: '羁绊是无法切断的。',
+      en: 'Bonds cannot be severed.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '宇智波佐助', en: 'Sasuke Uchiha' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-75',
+      cn: '真正的强者，是能保护他人的人。',
+      en: 'A true strong person is one who can protect others.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '千手纲手', en: 'Tsunade' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-76',
+      cn: '医疗忍者是战场上最重要的存在。',
+      en: 'Medical ninjas are the most important presence on the battlefield.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '千手纲手', en: 'Tsunade' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-77',
+      cn: '时间可以治愈一切伤痛。',
+      en: 'Time can heal all wounds.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '卡卡西', en: 'Kakashi' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-78',
+      cn: '每个人都有属于自己的忍道。',
+      en: 'Everyone has their own ninja way.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '漩涡鸣人', en: 'Naruto Uzumaki' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-79',
+      cn: '世界因你而不同。',
+      en: 'The world is different because of you.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '自来也', en: 'Jiraiya' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-80',
+      cn: '牺牲是为了更大的目标。',
+      en: 'Sacrifice is for a greater goal.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '千手扉间', en: 'Tobirama Senju' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-81',
+      cn: '梦想的重量，比任何东西都要重。',
+      en: 'The weight of dreams is heavier than anything else.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '漩涡鸣人', en: 'Naruto Uzumaki' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-82',
+      cn: '越是黑暗的地方，越需要光明。',
+      en: 'The darker the place, the more light is needed.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '志村团藏', en: 'Danzo Shimura' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-83',
+      cn: '人的价值不在于天赋，而在于努力。',
+      en: 'The value of a person lies not in talent, but in effort.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: 'Rock Lee', en: 'Rock Lee' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-84',
+      cn: '即使是失败者，也能创造奇迹。',
+      en: 'Even losers can create miracles.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '漩涡鸣人', en: 'Naruto Uzumaki' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-85',
+      cn: '师徒之情，胜过血缘。',
+      en: 'The bond between teacher and student surpasses blood ties.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '自来也', en: 'Jiraiya' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-86',
+      cn: '和平是用无数牺牲换来的。',
+      en: 'Peace is won through countless sacrifices.',
+      source: { cn: '《火影忍者》', en: 'Naruto' },
+      author: { cn: '长门', en: 'Nagato' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-87',
+      cn: '愿望的实现需要代价。',
+      en: 'The fulfillment of wishes requires a price.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-88',
+      cn: '人的选择决定了未来。',
+      en: 'Human choices determine the future.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-89',
+      cn: '所谓的命运，不过是无数选择的结果。',
+      en: 'What is called fate is merely the result of countless choices.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-90',
+      cn: '执着会带来痛苦。',
+      en: 'Attachment brings suffering.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-91',
+      cn: '世界上不存在巧合，只有必然。',
+      en: 'There is no coincidence in the world, only inevitability.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '次元魔女', en: 'Dimension Witch' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-92',
+      cn: '为了重要的人，付出任何代价都值得。',
+      en: 'Any price is worth paying for someone important.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '小狼', en: 'Syaoran' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-93',
+      cn: '穿越时空，也要找到你。',
+      en: 'I will traverse time and space to find you.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '小狼', en: 'Syaoran' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-94',
+      cn: '记忆是无价之宝。',
+      en: 'Memories are priceless treasures.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '小樱', en: 'Sakura' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-95',
+      cn: '不管走到哪里，心中都有你。',
+      en: 'No matter where I go, you are in my heart.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本樱', en: 'Sakura Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-96',
+      cn: '相信自己，就会有奇迹发生。',
+      en: 'Believe in yourself, and miracles will happen.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本樱', en: 'Sakura Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-97',
+      cn: '每个人心中都有一颗星星。',
+      en: 'Everyone has a star in their heart.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本樱', en: 'Sakura Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-98',
+      cn: '温柔的力量，比暴力更强大。',
+      en: 'The power of gentleness is stronger than violence.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '小可', en: 'Kero' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-99',
+      cn: '爱可以超越一切障碍。',
+      en: 'Love can overcome all obstacles.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '李小狼', en: 'Syaoran Li' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-100',
+      cn: '守护是一种责任，也是一种荣耀。',
+      en: 'Protection is both a responsibility and an honor.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '月城雪兔', en: 'Yukito Tsukishiro' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-101',
+      cn: '未来是由现在决定的。',
+      en: 'The future is determined by the present.',
+      source: { cn: '《X战记》', en: 'X' },
+      author: { cn: '司狼神威', en: 'Kamui Shiro' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-102',
+      cn: '为了保护世界，必须做出选择。',
+      en: 'To protect the world, choices must be made.',
+      source: { cn: '《X战记》', en: 'X' },
+      author: { cn: '司狼神威', en: 'Kamui Shiro' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-103',
+      cn: '命运的齿轮已经开始转动。',
+      en: 'The gears of fate have begun to turn.',
+      source: { cn: '《X战记》', en: 'X' },
+      author: { cn: '桃生小鸟', en: 'Kotori Monou' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-104',
+      cn: '牺牲一个人可以拯救世界吗？',
+      en: 'Can sacrificing one person save the world?',
+      source: { cn: '《X战记》', en: 'X' },
+      author: { cn: '皇昴流', en: 'Subaru Sumeragi' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-105',
+      cn: '愿望总是有代价的。',
+      en: 'Wishes always come with a price.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-106',
+      cn: '人类最愚蠢的地方，就是看不清自己。',
+      en: 'The most foolish thing about humans is not seeing themselves clearly.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-107',
+      cn: '改变别人之前，先改变自己。',
+      en: 'Before changing others, change yourself first.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-108',
+      cn: '习惯是最可怕的束缚。',
+      en: 'Habit is the most terrifying constraint.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-109',
+      cn: '相遇和别离，都是命中注定。',
+      en: 'Meetings and partings are all destined.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '次元魔女', en: 'Dimension Witch' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-110',
+      cn: '时间会带走一切，也会带来一切。',
+      en: 'Time takes everything away and brings everything.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '法伊', en: 'Fai' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-111',
+      cn: '笑容是最好的伪装。',
+      en: 'A smile is the best disguise.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '法伊', en: 'Fai' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-112',
+      cn: '力量是保护重要之人的工具。',
+      en: 'Power is a tool to protect important people.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '黑钢', en: 'Kurogane' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-113',
+      cn: '坚持就是胜利。',
+      en: 'Persistence is victory.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本樱', en: 'Sakura Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-114',
+      cn: '友情是最珍贵的宝物。',
+      en: 'Friendship is the most precious treasure.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '大道寺知世', en: 'Tomoyo Daidouji' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-115',
+      cn: '每一天都是全新的开始。',
+      en: 'Every day is a brand new beginning.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本樱', en: 'Sakura Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-116',
+      cn: '心灵的连接超越距离。',
+      en: 'The connection of hearts transcends distance.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本桃矢', en: 'Touya Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-117',
+      cn: '魔法存在于相信它的人心中。',
+      en: 'Magic exists in the hearts of those who believe in it.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '小可', en: 'Kero' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-118',
+      cn: '真正的勇气是面对恐惧。',
+      en: 'True courage is facing fear.',
+      source: { cn: '《X战记》', en: 'X' },
+      author: { cn: '司狼神威', en: 'Kamui Shiro' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-119',
+      cn: '世界的未来掌握在我们手中。',
+      en: 'The future of the world is in our hands.',
+      source: { cn: '《X战记》', en: 'X' },
+      author: { cn: '火煉', en: 'Karen Kasumi' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-120',
+      cn: '为了爱的人，可以放弃一切。',
+      en: 'For the one you love, you can give up everything.',
+      source: { cn: '《X战记》', en: 'X' },
+      author: { cn: '桃生封真', en: 'Fuma Monou' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-121',
+      cn: '痛苦是成长的代价。',
+      en: 'Pain is the price of growth.',
+      source: { cn: '《东京巴比伦》', en: 'Tokyo Babylon' },
+      author: { cn: '皇昴流', en: 'Subaru Sumeragi' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-122',
+      cn: '每个人都有自己的黑暗面。',
+      en: 'Everyone has their own dark side.',
+      source: { cn: '《东京巴比伦》', en: 'Tokyo Babylon' },
+      author: { cn: '星史郎', en: 'Seishiro Sakurazuka' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-123',
+      cn: '爱与恨只在一念之间。',
+      en: 'Love and hate are separated by a single thought.',
+      source: { cn: '《东京巴比伦》', en: 'Tokyo Babylon' },
+      author: { cn: '星史郎', en: 'Seishiro Sakurazuka' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-124',
+      cn: '真相有时比谎言更残酷。',
+      en: 'Truth is sometimes more cruel than lies.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-125',
+      cn: '人与人之间的羁绊是永恒的。',
+      en: 'Bonds between people are eternal.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '小狼', en: 'Syaoran' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-126',
+      cn: '等价交换是世界的法则。',
+      en: 'Equivalent exchange is the law of the world.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-127',
+      cn: '心之所向，无所不能。',
+      en: 'Where the heart goes, nothing is impossible.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本樱', en: 'Sakura Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-128',
+      cn: '时间无法抹去真正的记忆。',
+      en: 'Time cannot erase true memories.',
+      source: { cn: '《翼·年代记》', en: 'Tsubasa: Reservoir Chronicle' },
+      author: { cn: '小樱', en: 'Sakura' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-129',
+      cn: '每个选择都会改变未来。',
+      en: 'Every choice changes the future.',
+      source: { cn: '《XXXHolic》', en: 'XXXHolic' },
+      author: { cn: '壹原侑子', en: 'Yuko Ichihara' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-130',
+      cn: '世界因梦想而美丽。',
+      en: 'The world is beautiful because of dreams.',
+      source: { cn: '《魔卡少女樱》', en: 'Cardcaptor Sakura' },
+      author: { cn: '木之本樱', en: 'Sakura Kinomoto' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-131',
+      cn: '自由的代价是责任。',
+      en: 'The price of freedom is responsibility.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-132',
+      cn: '墙内的和平是虚假的。',
+      en: 'Peace within the walls is false.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-133',
+      cn: '为了自由，必须战斗。',
+      en: 'For freedom, we must fight.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-134',
+      cn: '人类的历史就是战争的历史。',
+      en: 'Human history is a history of war.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '埃尔文·史密斯', en: 'Erwin Smith' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-135',
+      cn: '无知是最大的敌人。',
+      en: 'Ignorance is the greatest enemy.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '埃尔文·史密斯', en: 'Erwin Smith' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-136',
+      cn: '献出心脏！',
+      en: 'Dedicate your heart!',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '埃尔文·史密斯', en: 'Erwin Smith' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-137',
+      cn: '人类能够战胜巨人，是因为我们有智慧。',
+      en: 'Humans can defeat titans because we have wisdom.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-138',
+      cn: '弱者也能改变世界。',
+      en: 'Even the weak can change the world.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-139',
+      cn: '知识就是力量。',
+      en: 'Knowledge is power.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-140',
+      cn: '有时候，牺牲是必要的。',
+      en: 'Sometimes, sacrifice is necessary.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-141',
+      cn: '我只想守护你。',
+      en: 'I just want to protect you.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '三笠·阿克曼', en: 'Mikasa Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-142',
+      cn: '活着就是战斗。',
+      en: 'To live is to fight.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '三笠·阿克曼', en: 'Mikasa Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-143',
+      cn: '没有你的世界，没有意义。',
+      en: 'A world without you has no meaning.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '三笠·阿克曼', en: 'Mikasa Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-144',
+      cn: '人不能总是理性地选择。',
+      en: 'People cannot always choose rationally.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '利威尔', en: 'Levi Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-145',
+      cn: '不要后悔自己的选择。',
+      en: 'Do not regret your choices.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '利威尔', en: 'Levi Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-146',
+      cn: '只有经历过地狱的人，才能建立天堂。',
+      en: 'Only those who have experienced hell can build heaven.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '利威尔', en: 'Levi Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-147',
+      cn: '死去的人无法反抗，我们活着的人要为他们战斗。',
+      en: 'The dead cannot fight back, so we the living must fight for them.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '利威尔', en: 'Levi Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-148',
+      cn: '真正的敌人是人类的愚昧。',
+      en: 'The real enemy is human ignorance.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '韩吉·佐耶', en: 'Hange Zoe' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-149',
+      cn: '好奇心是推动进步的动力。',
+      en: 'Curiosity is the driving force of progress.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '韩吉·佐耶', en: 'Hange Zoe' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-150',
+      cn: '了解敌人，才能战胜敌人。',
+      en: 'Know your enemy to defeat your enemy.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '韩吉·佐耶', en: 'Hange Zoe' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-151',
+      cn: '仇恨只会带来更多仇恨。',
+      en: 'Hatred only brings more hatred.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '格里沙·耶格尔', en: 'Grisha Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-152',
+      cn: '历史是由胜利者书写的。',
+      en: 'History is written by the victors.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '格里沙·耶格尔', en: 'Grisha Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-153',
+      cn: '为了未来，必须面对过去。',
+      en: 'For the future, we must face the past.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '格里沙·耶格尔', en: 'Grisha Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-154',
+      cn: '我们都是这个世界的奴隶。',
+      en: 'We are all slaves to this world.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-155',
+      cn: '自由是我们与生俱来的权利。',
+      en: 'Freedom is our birthright.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·克鲁格', en: 'Eren Kruger' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-156',
+      cn: '爱能够超越仇恨。',
+      en: 'Love can transcend hatred.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '卡尔拉·耶格尔', en: 'Carla Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-157',
+      cn: '孩子们不应该为大人的错误买单。',
+      en: 'Children should not pay for the mistakes of adults.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '莱纳·布朗', en: 'Reiner Braun' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-158',
+      cn: '我只是想成为英雄。',
+      en: 'I just wanted to be a hero.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '莱纳·布朗', en: 'Reiner Braun' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-159',
+      cn: '站在不同的立场，看到的世界完全不同。',
+      en: 'From different positions, the world looks completely different.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '莱纳·布朗', en: 'Reiner Braun' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-160',
+      cn: '战争中没有赢家，只有受害者。',
+      en: 'There are no winners in war, only victims.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '让·基尔希斯坦', en: 'Jean Kirstein' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-161',
+      cn: '恐惧让人变得软弱，但也让人学会珍惜。',
+      en: 'Fear makes people weak, but also teaches them to cherish.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '让·基尔希斯坦', en: 'Jean Kirstein' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-162',
+      cn: '我们为死者而战，为生者而活。',
+      en: 'We fight for the dead, we live for the living.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '让·基尔希斯坦', en: 'Jean Kirstein' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-163',
+      cn: '出生在这个世界上，本身就是一种罪吗？',
+      en: 'Is being born into this world itself a sin?',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '历史塔·莱斯', en: 'Historia Reiss' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-164',
+      cn: '即使全世界都是你的敌人，我也会站在你这边。',
+      en: 'Even if the whole world is your enemy, I will stand by your side.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '历史塔·莱斯', en: 'Historia Reiss' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-165',
+      cn: '希望是这个残酷世界中唯一的光明。',
+      en: 'Hope is the only light in this cruel world.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-166',
+      cn: '想要改变什么，就必须付出代价。',
+      en: 'To change something, you must pay a price.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-167',
+      cn: '理想和现实之间，总有一道难以逾越的鸿沟。',
+      en: 'Between ideals and reality, there is always an insurmountable gap.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '埃尔文·史密斯', en: 'Erwin Smith' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-168',
+      cn: '人类之所以强大，是因为我们能够团结。',
+      en: 'Humans are strong because we can unite.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '皮克西斯', en: 'Dot Pixis' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-169',
+      cn: '生命的价值不在于长度，而在于深度。',
+      en: 'The value of life is not in its length, but in its depth.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '埃尔文·史密斯', en: 'Erwin Smith' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-170',
+      cn: '每个人都有自己的战斗方式。',
+      en: 'Everyone has their own way of fighting.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '萨莎·布劳斯', en: 'Sasha Blouse' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-171',
+      cn: '食物是生命的源泉。',
+      en: 'Food is the source of life.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '萨莎·布劳斯', en: 'Sasha Blouse' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-172',
+      cn: '简单的幸福有时最珍贵。',
+      en: 'Simple happiness is sometimes the most precious.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '萨莎·布劳斯', en: 'Sasha Blouse' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-173',
+      cn: '忠诚是战士最重要的品质。',
+      en: 'Loyalty is the most important quality of a warrior.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '马可·博特', en: 'Marco Bott' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-174',
+      cn: '理解他人是和平的第一步。',
+      en: 'Understanding others is the first step towards peace.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '马可·博特', en: 'Marco Bott' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-175',
+      cn: '每个人都值得被理解。',
+      en: 'Everyone deserves to be understood.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '马可·博特', en: 'Marco Bott' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-176',
+      cn: '强者的责任是保护弱者。',
+      en: 'The responsibility of the strong is to protect the weak.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '贝特霍尔德', en: 'Bertholdt Hoover' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-177',
+      cn: '懦弱不是罪，但必须克服。',
+      en: 'Cowardice is not a sin, but it must be overcome.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '贝特霍尔德', en: 'Bertholdt Hoover' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-178',
+      cn: '有时候，沉默比言语更有力量。',
+      en: 'Sometimes, silence is more powerful than words.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '贝特霍尔德', en: 'Bertholdt Hoover' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-179',
+      cn: '正义是相对的，每个人都有自己的正义。',
+      en: 'Justice is relative, everyone has their own justice.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-180',
+      cn: '过去无法改变，但未来可以创造。',
+      en: 'The past cannot be changed, but the future can be created.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '克鲁格', en: 'Kruger' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-181',
+      cn: '要想保护谁，就必须学会战斗。',
+      en: 'To protect someone, you must learn to fight.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '三笠·阿克曼', en: 'Mikasa Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-182',
+      cn: '世界的残酷并不是不去改变的理由。',
+      en: 'The cruelty of the world is not a reason not to change it.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-183',
+      cn: '人类最可怕的武器是团结。',
+      en: 'Humanity\'s most terrifying weapon is unity.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '埃尔文·史密斯', en: 'Erwin Smith' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-184',
+      cn: '活下去，才有改变的可能。',
+      en: 'Only by surviving is there a possibility of change.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '利威尔', en: 'Levi Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-185',
+      cn: '勇气不是没有恐惧，而是战胜恐惧。',
+      en: 'Courage is not the absence of fear, but overcoming fear.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '阿尔敏·阿诺德', en: 'Armin Arlert' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-186',
+      cn: '每一次选择，都会有人牺牲。',
+      en: 'Every choice comes with sacrifice.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '利威尔', en: 'Levi Ackerman' },
+      category: 'anime'
+    },
+    {
+      id: 'anime-187',
+      cn: '为了自由，任何代价都值得。',
+      en: 'For freedom, any price is worth it.',
+      source: { cn: '《进击的巨人》', en: 'Attack on Titan' },
+      author: { cn: '艾伦·耶格尔', en: 'Eren Yeager' },
+      category: 'anime'
     }
   ],
   movies: [

@@ -21,6 +21,19 @@ import { steamGamesData } from './data/steamGames';
 import { iosGamesData } from './data/iosGames';
 import { switchGamesData } from './data/switchGames';
 import { koreanMoviesData } from './data/koreanMovies';
+import { chineseMoviesData } from './data/chineseMovies';
+import { chineseDramasData } from './data/chineseDramas';
+import { varietyShowsData } from './data/varietyShows';
+import { documentariesData } from './data/documentaries';
+import { psGamesData } from './data/psGames';
+import { podcastsData } from './data/podcasts';
+import { mangaData } from './data/manga';
+import { thaiDramasData } from './data/thaiDramas';
+import { japaneseMoviesData } from './data/japaneseMovies';
+import { westernAnimationData } from './data/westernAnimation';
+import { audiobooksData } from './data/audiobooks';
+import { xboxGamesData } from './data/xboxGames';
+import { americanDramasData } from './data/americanDramas';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import {
@@ -32,7 +45,12 @@ import {
   User,
   Clapperboard,
   Sparkles,
-  Gamepad2
+  Gamepad2,
+  Video,
+  Camera,
+  Mic,
+  BookMarked,
+  Headphones
 } from 'lucide-react';
 
 export default function Home() {
@@ -183,6 +201,110 @@ export default function Home() {
       years: '2003-2024',
       icon: Film,
       bgColor: 'bg-purple-100',
+    },
+    {
+      id: 'chinese-movies',
+      name: { cn: '中国电影', en: 'Chinese Movies' },
+      data: chineseMoviesData,
+      years: '2010-2024',
+      icon: Film,
+      bgColor: 'bg-purple-50',
+    },
+    {
+      id: 'chinese-dramas',
+      name: { cn: '国产剧', en: 'Chinese Dramas' },
+      data: chineseDramasData,
+      years: '2015-2024',
+      icon: Tv,
+      bgColor: 'bg-purple-100',
+    },
+    {
+      id: 'variety-shows',
+      name: { cn: '综艺节目', en: 'Variety Shows' },
+      data: varietyShowsData,
+      years: '2013-2024',
+      icon: Video,
+      bgColor: 'bg-purple-50',
+    },
+    {
+      id: 'documentaries',
+      name: { cn: '纪录片', en: 'Documentaries' },
+      data: documentariesData,
+      years: '2011-2024',
+      icon: Camera,
+      bgColor: 'bg-purple-100',
+    },
+    {
+      id: 'ps-games',
+      name: { cn: 'PlayStation 游戏', en: 'PlayStation Games' },
+      data: psGamesData,
+      years: '2013-2024',
+      icon: Gamepad2,
+      bgColor: 'bg-purple-50',
+    },
+    {
+      id: 'podcasts',
+      name: { cn: '播客', en: 'Podcasts' },
+      data: podcastsData,
+      years: '2015-2024',
+      icon: Mic,
+      bgColor: 'bg-purple-100',
+    },
+    {
+      id: 'manga',
+      name: { cn: '日本漫画', en: 'Manga' },
+      data: mangaData,
+      years: '2010-2023',
+      icon: BookMarked,
+      bgColor: 'bg-purple-50',
+    },
+    {
+      id: 'thai-dramas',
+      name: { cn: '泰剧', en: 'Thai Dramas' },
+      data: thaiDramasData,
+      years: '2013-2024',
+      icon: Tv,
+      bgColor: 'bg-purple-100',
+    },
+    {
+      id: 'japanese-movies',
+      name: { cn: '日本电影', en: 'Japanese Movies' },
+      data: japaneseMoviesData,
+      years: '2010-2024',
+      icon: Film,
+      bgColor: 'bg-purple-50',
+    },
+    {
+      id: 'western-animation',
+      name: { cn: '欧美动画', en: 'Western Animation' },
+      data: westernAnimationData,
+      years: '2010-2024',
+      icon: Palette,
+      bgColor: 'bg-purple-100',
+    },
+    {
+      id: 'audiobooks',
+      name: { cn: '有声书', en: 'Audiobooks' },
+      data: audiobooksData,
+      years: '2010-2024',
+      icon: Headphones,
+      bgColor: 'bg-purple-50',
+    },
+    {
+      id: 'xbox-games',
+      name: { cn: 'Xbox 游戏', en: 'Xbox Games' },
+      data: xboxGamesData,
+      years: '2010-2024',
+      icon: Gamepad2,
+      bgColor: 'bg-purple-100',
+    },
+    {
+      id: 'american-dramas',
+      name: { cn: '美剧', en: 'American TV Series' },
+      data: americanDramasData,
+      years: '2010-2024',
+      icon: Tv,
+      bgColor: 'bg-purple-50',
     },
   ];
 
