@@ -5,9 +5,23 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const [language, setLanguage] = useState('cn');
+  // Set default language to English
+  const [language, setLanguage] = useState('en');
   const [watched, setWatched] = useState({});
   const [records, setRecords] = useState([]);
+
+  // Load language preference from localStorage
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  // Save language preference to localStorage
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
 
   // Load watched状态from localStorage
   useEffect(() => {
