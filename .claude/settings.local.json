@@ -4,7 +4,11 @@
       "Bash(npm install html-to-image)",
       "Bash(mkdir -p app/data)",
       "Bash(npm run dev)",
-      "Bash(npm install lucide-react)"
+      "Bash(npm install lucide-react)",
+      "WebFetch(domain:vercel.com)",
+      "WebSearch",
+      "Bash(npm install next@latest react@latest react-dom@latest)",
+      "Bash(npm run build)"
     ],
     "deny": [],
     "ask": []
