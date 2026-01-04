@@ -208,5 +208,19 @@ export const moviesData = {
     { id: 'inside-out-2', cn: '头脑特工队2', en: 'Inside Out 2' },
     { id: 'furiosa', cn: '狂怒女神', en: 'Furiosa: A Mad Max Saga' },
     { id: 'civil-war', cn: '内战', en: 'Civil War' }
+  ],
+  2025: [
+    { id: 'captain-america-brave-new-world', cn: '美国队长4：美丽新世界', en: 'Captain America: Brave New World' },
+    { id: 'thunderbolts', cn: '雷霆特工队', en: 'Thunderbolts' },
+    { id: 'fantastic-four', cn: '神奇四侠', en: 'The Fantastic Four' },
+    { id: 'mission-impossible-8', cn: '碟中谍8：最终清算', en: 'Mission: Impossible – The Final Reckoning' },
+    { id: 'avatar-3', cn: '阿凡达3：带种者', en: 'Avatar: Fire and Ash' },
+    { id: 'superman-legacy', cn: '超人：传承', en: 'Superman' },
+    { id: 'ballerina', cn: '芭蕾舞女杀手', en: 'Ballerina' },
+    { id: 'snow-white', cn: '白雪公主', en: 'Snow White' },
+    { id: 'how-to-train-your-dragon', cn: '驯龙高手', en: 'How to Train Your Dragon' },
+    { id: 'wicked-part-two', cn: '魔法坏女巫2', en: 'Wicked: Part Two' },
+    { id: 'jurassic-world-rebirth', cn: '侏罗纪世界：重生', en: 'Jurassic World Rebirth' },
+    { id: 'michael', cn: '迈克尔·杰克逊传记', en: 'Michael' }
   ]
 };

@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useApp } from '../context/AppContext';
-import { Home, FileText, Star, BookOpen, Languages, Cat } from 'lucide-react';
+import { Home, FileText, Star, BookOpen, Languages, Cat, Film } from 'lucide-react';
 
 export default function Navbar() {
   const router = useRouter();
@@ -31,8 +31,15 @@ export default function Navbar() {
               onClick={() => router.push('/')}
               className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white px-5 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 font-medium text-gray-700 hover:shadow-lg hover:scale-105"
             >
+              <Film size={18} />
+              {language === 'cn' ? '电影' : 'Movies'}
+            </button>
+            <button
+              onClick={() => router.push('/viewing')}
+              className="hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white px-5 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 font-medium text-gray-700 hover:shadow-lg hover:scale-105"
+            >
               <Home size={18} />
-              {language === 'cn' ? '首页' : 'Home'}
+              {language === 'cn' ? '观影' : 'Viewing'}
             </button>
             <button
               onClick={() => router.push('/records')}

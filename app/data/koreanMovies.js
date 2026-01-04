@@ -63,4 +63,11 @@ export const koreanMoviesData = {
     { id: 'exhuma', cn: '破墓', en: 'Exhuma' },
     { id: 'i-the-executioner', cn: '老手2', en: 'I, the Executioner' },
   ],
+  2025: [
+    { id: 'project-silence', cn: '寂静计划', en: 'Project Silence' },
+    { id: 'road-to-boston', cn: '首尔之春2', en: 'Seoul Spring 2' },
+    { id: 'officer-black-belt', cn: '黑带警官', en: 'Officer Black Belt' },
+    { id: 'the-priests-2', cn: '黑祭司2', en: 'The Priests 2' },
+    { id: 'smugglers-2', cn: '走私者2', en: 'Smugglers 2' },
+  ],
 };

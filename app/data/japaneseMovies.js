@@ -50,4 +50,11 @@ export const japaneseMoviesData = {
   2024: [
     { id: 'haikyu-movie', cn: '排球少年剧场版', en: 'Haikyu!! The Movie' },
   ],
+  2025: [
+    { id: 'my-hero-academia-movie-4', cn: '我的英雄学院剧场版4', en: 'My Hero Academia: You\'re Next' },
+    { id: 'spy-family-movie-2', cn: '间谍过家家剧场版2', en: 'SPY×FAMILY Code: White 2' },
+    { id: 'detective-conan-2025', cn: '名侦探柯南：100万美元的五棱星', en: 'Detective Conan: The Million-dollar Pentagram' },
+    { id: 'godzilla-vs-kong-new-empire', cn: '哥斯拉大战金刚：新帝国', en: 'Godzilla x Kong: The New Empire' },
+    { id: 'your-name-engraved-herein', cn: '刻在你心底的名字', en: 'Your Name Engraved Herein' },
+  ],
 };

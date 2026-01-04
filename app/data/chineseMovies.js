@@ -53,4 +53,12 @@ export const chineseMoviesData = {
     { id: 'yolo', cn: '热辣滚烫', en: 'YOLO' },
     { id: 'successor', cn: '年会不能停！', en: 'Johnny Keep Walking!' },
   ],
+  2025: [
+    { id: 'boonie-bears-time-twist', cn: '熊出没·逆转时空', en: 'Boonie Bears: Time Twist' },
+    { id: 'detective-chinatown-2', cn: '唐人街探案2', en: 'Detective Chinatown 2' },
+    { id: 'ne-zha-2', cn: '哪吒之魔童闹海', en: 'Ne Zha 2' },
+    { id: 'the-wandering-earth-3', cn: '流浪地球3', en: 'The Wandering Earth 3' },
+    { id: 'legend-of-the-demon-cat', cn: '封神第二部：战火西岐', en: 'Creation of the Gods II' },
+    { id: 'panda-plan', cn: '熊猫计划', en: 'Panda Plan' },
+  ],
 };
