@@ -38,24 +38,24 @@ export default function CategoryPage() {
   const categoryId = params.id;
 
   const categoryData = {
-    'anime': { name: { cn: '日本动漫', en: 'Japanese Anime' }, data: animeData },
-    'chinese-anime': { name: { cn: '中国动漫', en: 'Chinese Anime' }, data: chineseAnimeData },
-    'tv-shows': { name: { cn: '外国电视剧', en: 'Foreign TV Shows' }, data: tvShowsData },
-    'korean-dramas': { name: { cn: '韩剧', en: 'Korean Dramas' }, data: koreanDramasData },
-    'japanese-dramas': { name: { cn: '日剧', en: 'Japanese Dramas' }, data: japaneseDramasData },
-    'music': { name: { cn: '音乐专辑', en: 'Music Albums' }, data: musicData },
     'movies': { name: { cn: '电影', en: 'Movies' }, data: moviesData },
     'books': { name: { cn: '外国新书', en: 'Foreign Books' }, data: booksData },
     'western-singers': { name: { cn: '欧美歌手', en: 'Western Singers' }, data: westernSingersData },
+    'tv-shows': { name: { cn: '外国电视剧', en: 'Foreign TV Shows' }, data: tvShowsData },
+    'korean-dramas': { name: { cn: '韩剧', en: 'Korean Dramas' }, data: koreanDramasData },
+    'korean-movies': { name: { cn: '韩国电影', en: 'Korean Movies' }, data: koreanMoviesData },
+    'anime': { name: { cn: '日本动漫', en: 'Japanese Anime' }, data: animeData },
+    'chinese-anime': { name: { cn: '中国动漫', en: 'Chinese Anime' }, data: chineseAnimeData },
+    'japanese-dramas': { name: { cn: '日剧', en: 'Japanese Dramas' }, data: japaneseDramasData },
+    'music': { name: { cn: '音乐专辑', en: 'Music Albums' }, data: musicData },
     'japanese-singers': { name: { cn: '日本歌手', en: 'Japanese Singers' }, data: japaneseSingersData },
     'chinese-singers': { name: { cn: '中国歌手', en: 'Chinese Singers' }, data: chineseSingersData },
-    'miyazaki-works': { name: { cn: '宫崎骏作品', en: 'Miyazaki Works' }, data: miyazakiWorksData },
-    'shinkai-works': { name: { cn: '新海诚作品', en: 'Shinkai Works' }, data: shinkaiWorksData },
-    'famous-directors': { name: { cn: '知名导演作品', en: 'Famous Directors' }, data: famousDirectorsData },
     'steam-games': { name: { cn: 'Steam 游戏', en: 'Steam Games' }, data: steamGamesData },
     'ios-games': { name: { cn: 'iOS 游戏', en: 'iOS Games' }, data: iosGamesData },
     'switch-games': { name: { cn: 'Switch 游戏', en: 'Switch Games' }, data: switchGamesData },
-    'korean-movies': { name: { cn: '韩国电影', en: 'Korean Movies' }, data: koreanMoviesData },
+    'miyazaki-works': { name: { cn: '宫崎骏作品', en: 'Miyazaki Works' }, data: miyazakiWorksData },
+    'shinkai-works': { name: { cn: '新海诚作品', en: 'Shinkai Works' }, data: shinkaiWorksData },
+    'famous-directors': { name: { cn: '知名导演作品', en: 'Famous Directors' }, data: famousDirectorsData },
   };
 
   const currentCategory = categoryData[categoryId];
